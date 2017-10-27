@@ -75,17 +75,24 @@ def readSurfaceGeo(b18path):
         srfGeoBlock = getDataParagraph("_EXTENSION_BuildingGeometry_START_", "_EXTENSION_BuildingGeometry_END_", b18data)
         #now get vertex's coordinate xyz
         vertexdict = dict() #{vertexID:[x,y,z]}
-        for item in srfGeoBlock:
-            if "vertex" in item:
-                items = item.split()
-                vertexdict[int(items[1])] = [float(xyz) for xyz in items[2:]]
-                #vertexdict[int(items[1])] = list()
-                #for xyz in items[2:]:
-                    #vertexdict[int(items[1])].append(float(xyz))
+        srfbasicinfo = dict() #{surfaceID:[vertexID]}
+        srfInfo = dict() #{surfaceID:[vertices coordinate]}
+        for line in srfGeoBlock:
+            dline = line.split()
+            if "vertex" in dline:
+                vertexdict[int(dline[1])] = [float(xyz) for xyz in dline[2:]] #{vertexID:[x,y,z]}
+            if "wall" in dline or "window" in dline or "floor" in dline or "ceiling" in dline or "roof" in dline:
+                srfbasicinfo[int(dline[1])] = [int(nrID) for nrID in dline[2:]] #{surfaceID:[vertexID]}
+
+        for key in srfbasicinfo.keys():
+            srfInfo[key] = []
+            for vertices in srfbasicinfo[key]:
+                srfInfo[key].append(vertexdict[vertices])
         b18file.close()
-        return vertexdict
+        return srfInfo,vertexdict,srfbasicinfo
+        #actually only need srfInfo
+        #just getting everything out for now, incase will need to use those
 
 SurfaceTemperature = readSurfaceTemp(AddOutputPath)
-vertex = readSurfaceGeo(b18path)
-print(vertex)
-#print(SurfaceTemperature)
+srfInfo, vertexdict, srfbasicinfo = readSurfaceGeo(b18path)
+
