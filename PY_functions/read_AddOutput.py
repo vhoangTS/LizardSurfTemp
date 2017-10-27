@@ -78,9 +78,10 @@ def readSurfaceGeo(b18path):
         for item in srfGeoBlock:
             if "vertex" in item:
                 items = item.split()
-                vertexdict[int(items[1])] = list()
-                for xyz in items[2:]:
-                    vertexdict[int(items[1])].append(float(xyz))
+                vertexdict[int(items[1])] = [float(xyz) for xyz in items[2:]]
+                #vertexdict[int(items[1])] = list()
+                #for xyz in items[2:]:
+                    #vertexdict[int(items[1])].append(float(xyz))
         b18file.close()
         return vertexdict
 
