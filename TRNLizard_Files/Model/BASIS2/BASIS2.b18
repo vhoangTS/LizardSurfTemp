@@ -348,7 +348,7 @@ AIRNODES = OFFICE
         =  21 : SURF = 7, 3, 4, 5, 6, 2, 1, 8, 9, 10, 11, 12, 13, 14,   : QABSI - total radiation absorbed (and transmitted) at all inside surf. of airnode (inc. solar gains, radiative heat and int. rad. gains, but not l-wave radiation from other walls
 
  AIRNODES = OFFICE
- NTYPES = 17 : SURF = 7, : TSI
+ NTYPES = 17 : SURF = 1,2,3,4,5,6,7,8,9,10,11,12,13,14, : TSI
 
 
 *-------------------
