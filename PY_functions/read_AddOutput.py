@@ -10,7 +10,9 @@ Variant = "BASIS2" #this will be an input from GH component in the future
 AddOutputPath = os.path.join(ModelPath,Variant,"Results\\AddOutput_1h.prn")
 b18path = os.path.join(ModelPath,Variant,"%s.b18"%Variant)
 
-def readSurfaceTemp(AddOutputPath):
+TimeStep = 1
+
+def readSurfaceTemp(AddOutputPath,TimeStep):
     """Read in AddOutput_1h.prn
     Return a dictionary {surfacename:[hourly values]}"""
     if not os.path.isfile(AddOutputPath):
@@ -25,9 +27,10 @@ def readSurfaceTemp(AddOutputPath):
         SurfaceTemperature = dict() #{srfname:[hourly surface temperature]}
         for item in firstline:
             itemname = item.split("_")[-1]
+            itemid = int(item.split("_S")[-1])
             srfname.append(itemname)
-            srfID.append(int(item.split("S")[-1]))
-            SurfaceTemperature[itemname] = [] #empty list later to store hourly temperature
+            srfID.append(itemid)
+            SurfaceTemperature[itemid] = [] #empty list later to store hourly temperature
         SurfTempLines.pop(0)
         SurfTempLines.pop(0)
         hour = []
@@ -37,11 +40,15 @@ def readSurfaceTemp(AddOutputPath):
                 hour.append(float(line[0]))
                 line.pop(0)
                 for id,values in enumerate(line):
-                    SurfaceTemperature[srfname[id]].append(float(values))
+                    SurfaceTemperature[srfID[id]].append(float(values))
             except:
                 break
         SurfTempF.close()
-        return SurfaceTemperature
+        #now get all the temperature at timestep
+        SrfTempAtTimeStep = []
+        for key in sorted(SurfaceTemperature.keys()):
+            SrfTempAtTimeStep.append(SurfaceTemperature[key][TimeStep-1]) #sorted smaller id to higher id
+        return SurfaceTemperature, SrfTempAtTimeStep
 
 def getDataParagraph(startpattern,stoppattern,datararray):
     """by Mark Sen Dong for TRNLizard b18 geometry visualization
@@ -83,16 +90,14 @@ def readSurfaceGeo(b18path):
                 vertexdict[int(dline[1])] = [float(xyz) for xyz in dline[2:]] #{vertexID:[x,y,z]}
             if "wall" in dline or "window" in dline or "floor" in dline or "ceiling" in dline or "roof" in dline:
                 srfbasicinfo[int(dline[1])] = [int(nrID) for nrID in dline[2:]] #{surfaceID:[vertexID]}
-
-        for key in srfbasicinfo.keys():
+        for key in sorted(srfbasicinfo.keys()):
             srfInfo[key] = []
-            for vertices in srfbasicinfo[key]:
+            for vertices in sorted(srfbasicinfo[key]):
                 srfInfo[key].append(vertexdict[vertices])
         b18file.close()
         return srfInfo,vertexdict,srfbasicinfo
         #actually only need srfInfo
         #just getting everything out for now, incase will need to use those
 
-SurfaceTemperature = readSurfaceTemp(AddOutputPath)
+SrfTempAll, SrfTempTimeStep = readSurfaceTemp(AddOutputPath, TimeStep)
 srfInfo, vertexdict, srfbasicinfo = readSurfaceGeo(b18path)
-
