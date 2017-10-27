@@ -5,7 +5,8 @@ Returning {ID:temperature}
 import os
 import re
 
-ModelPath = "c:\\Users\\vhoang\\Desktop\\LizardSurfTemp\\TRNLizard_Files\\Model\\" #this will be an input from GH component in the future
+#ModelPath = "c:\\Users\\vhoang\\Desktop\\LizardSurfTemp\\TRNLizard_Files\\Model\\" #this will be an input from GH component in the future
+ModelPath = "C:\\Users\\Vu Hoang\\Desktop\\LizardSurfTemp\\TRNLizard_Files\\Model\\"
 Variant = "BASIS2" #this will be an input from GH component in the future
 AddOutputPath = os.path.join(ModelPath,Variant,"Results\\AddOutput_1h.prn")
 b18path = os.path.join(ModelPath,Variant,"%s.b18"%Variant)
@@ -14,7 +15,8 @@ TimeStep = 1
 
 def readSurfaceTemp(AddOutputPath,TimeStep):
     """Read in AddOutput_1h.prn
-    Return a dictionary {surfacename:[hourly values]}"""
+    Return a dictionary {surfacename:[hourly values]}
+    Sorted based on surface ID, lower to higher"""
     if not os.path.isfile(AddOutputPath):
         print("AddOutput_1h.prn file not found! Please check if you have surface temperature connected as additional output!")
         pass
@@ -90,9 +92,9 @@ def readSurfaceGeo(b18path):
                 vertexdict[int(dline[1])] = [float(xyz) for xyz in dline[2:]] #{vertexID:[x,y,z]}
             if "wall" in dline or "window" in dline or "floor" in dline or "ceiling" in dline or "roof" in dline:
                 srfbasicinfo[int(dline[1])] = [int(nrID) for nrID in dline[2:]] #{surfaceID:[vertexID]}
-        for key in sorted(srfbasicinfo.keys()):
+        for key in srfbasicinfo.keys():
             srfInfo[key] = []
-            for vertices in sorted(srfbasicinfo[key]):
+            for vertices in srfbasicinfo[key]:
                 srfInfo[key].append(vertexdict[vertices])
         b18file.close()
         return srfInfo,vertexdict,srfbasicinfo
@@ -101,3 +103,5 @@ def readSurfaceGeo(b18path):
 
 SrfTempAll, SrfTempTimeStep = readSurfaceTemp(AddOutputPath, TimeStep)
 srfInfo, vertexdict, srfbasicinfo = readSurfaceGeo(b18path)
+print(srfInfo)
+print(srfbasicinfo)

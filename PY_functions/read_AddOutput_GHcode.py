@@ -4,6 +4,7 @@ Returning {ID:temperature}
 """
 import os
 import re
+import Rhino as rc
 
 ModelPath = ModelPath #"c:\\Users\\vhoang\\Desktop\\LizardSurfTemp\\TRNLizard_Files\\Model\\" #this will be an input from GH component in the future
 Variant = Variant #"BASIS2" #this will be an input from GH component in the future
@@ -14,7 +15,8 @@ TimeStep = int(TimeStep) #1
 
 def readSurfaceTemp(AddOutputPath,TimeStep):
     """Read in AddOutput_1h.prn
-    Return a dictionary {surfacename:[hourly values]}"""
+    Return a dictionary {surfacename:[hourly values]}
+    Sorted based on surface ID, lower to higher"""
     if not os.path.isfile(AddOutputPath):
         print("AddOutput_1h.prn file not found! Please check if you have surface temperature connected as additional output!")
         pass
@@ -90,14 +92,41 @@ def readSurfaceGeo(b18path):
                 vertexdict[int(dline[1])] = [float(xyz) for xyz in dline[2:]] #{vertexID:[x,y,z]}
             if "wall" in dline or "window" in dline or "floor" in dline or "ceiling" in dline or "roof" in dline:
                 srfbasicinfo[int(dline[1])] = [int(nrID) for nrID in dline[2:]] #{surfaceID:[vertexID]}
-        for key in sorted(srfbasicinfo.keys()):
+        for key in srfbasicinfo.keys():
             srfInfo[key] = []
-            for vertices in sorted(srfbasicinfo[key]):
+            for vertices in srfbasicinfo[key]:
                 srfInfo[key].append(vertexdict[vertices])
         b18file.close()
         return srfInfo,vertexdict,srfbasicinfo
         #actually only need srfInfo
         #just getting everything out for now, incase will need to use those
 
+def verticesToSurface(verticesList):
+    """Mark Sen Dong
+    Turning list of vertices with coordinate into brep"""
+    ptslst = list()
+    print verticesList
+    for ptsxyz in verticesList:
+        pts = rc.Geometry.Point3d(ptsxyz[0],ptsxyz[1],ptsxyz[2])
+        ptslst.append(pts)
+    ptslst.append(ptslst[0])
+    #print ptslst
+    polyline = rc.Geometry.Polyline(ptslst)
+    #return polyline
+    return rc.Geometry.Brep.CreatePlanarBreps(polyline.ToNurbsCurve())
+
 SrfTempAll, SrfTempTimeStep = readSurfaceTemp(AddOutputPath, TimeStep)
 srfInfo, vertexdict, srfbasicinfo = readSurfaceGeo(b18path)
+print srfbasicinfo
+
+brep = verticesToSurface(srfInfo[keyID]) #just testing for now
+
+#Surfaces = []
+#for key in sorted(srfInfo.keys()):
+#    brep = verticesToSurface(srfInfo[key])
+#    print brep
+#    Surfaces.append(brep)
+
+#print Surfaces
+
+
