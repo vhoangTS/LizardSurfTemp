@@ -5,6 +5,7 @@ Returning {ID:temperature}
 import os
 import re
 import Rhino as rc
+import Grasshopper as gh
 
 ModelPath = ModelPath #"c:\\Users\\vhoang\\Desktop\\LizardSurfTemp\\TRNLizard_Files\\Model\\" #this will be an input from GH component in the future
 Variant = Variant #"BASIS2" #this will be an input from GH component in the future
@@ -105,7 +106,7 @@ def verticesToSurface(verticesList):
     """Mark Sen Dong
     Turning list of vertices with coordinate into brep"""
     ptslst = list()
-    print verticesList
+    #print verticesList
     for ptsxyz in verticesList:
         pts = rc.Geometry.Point3d(ptsxyz[0],ptsxyz[1],ptsxyz[2])
         ptslst.append(pts)
@@ -115,18 +116,20 @@ def verticesToSurface(verticesList):
     #return polyline
     return rc.Geometry.Brep.CreatePlanarBreps(polyline.ToNurbsCurve())
 
+def listToTree(nestedList):
+    """Anders Holder Deleuran
+    Convert list to datatree"""
+    dt = gh.DataTree[object]()
+    for i,l in enumerate(nestedList):
+        dt.AddRange(l,gh.Kernel.Data.GH_Path(i))
+    return dt
+
 SrfTempAll, SrfTempTimeStep = readSurfaceTemp(AddOutputPath, TimeStep)
 srfInfo, vertexdict, srfbasicinfo = readSurfaceGeo(b18path)
-print srfbasicinfo
 
-brep = verticesToSurface(srfInfo[keyID]) #just testing for now
-
-#Surfaces = []
-#for key in sorted(srfInfo.keys()):
-#    brep = verticesToSurface(srfInfo[key])
-#    print brep
-#    Surfaces.append(brep)
-
-#print Surfaces
-
-
+#get breps 
+Surfaces = list()
+for key in sorted(srfInfo.keys()):
+    brep = verticesToSurface(srfInfo[key])
+    Surfaces.append(brep)
+newSurf = listToTree(Surfaces)
