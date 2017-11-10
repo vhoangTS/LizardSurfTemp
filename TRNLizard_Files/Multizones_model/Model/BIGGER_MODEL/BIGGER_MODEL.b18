@@ -1,0 +1,1200 @@
+*********************************************************************************
+*  TRNBuild   3.0.285
+*********************************************************************************
+*   BUILDING DESCRIPTIONS FILE TRNSYS
+*   FOR BUILDING:   c:\Users\vhoang\Desktop\LizardSurfTemp\TRNLizard_Files\Multizones_model\Model\BIGGER_MODEL\BIGGER_MODEL.b18
+*   GET BY WORKING WITH TRNBuild 1.0 for Windows
+*********************************************************************************
+*
+*--------------------------------------------------------------------------------
+*  C o m m e n t s
+*--------------------------------------------------------------------------------
+*#C Originally created by TRNSIDF Version 1.45
+*--------------------------------------------------------------------------------
+*  P r o j e c t
+*--------------------------------------------------------------------------------
+*+++ PROJECT
+*+++ TITLE=undefined
+*+++ DESCRIPTION=undefined
+*+++ CREATED=vhoang
+*+++ ADDRESS=undefined
+*+++ CITY=undefined
+*+++ SWITCH=undefined
+*--------------------------------------------------------------------------------
+*  P r o p e r t i e s
+*--------------------------------------------------------------------------------
+PROPERTIES
+ DENSITY=1.204 : CAPACITY=1.012 : PRESSURE=101325.000 : HVAPOR=2454.0 : SIGMA=2.041e-007 : RTEMP=293.15
+*--- convective heat transfer coefficient calculation ---------------------
+ KFLOORUP=7.2 : EFLOORUP=0.31 : KFLOORDOWN=3.888 : EFLOORDOWN=0.31
+ KCEILUP=7.2 : ECEILUP=0.31 : KCEILDOWN=3.888 : ECEILDOWN=0.31
+ KVERTICAL=5.76 : EVERTICAL=0.3
+*--- radiance parameters -------------------
+ SCENE_ROTATION_ANGLE=0 : GROUND_IDS= : GROUND_REFLECTANCE=0.2 : SHADER_REFLECTANCE=0
+ CALC_MODE=CLASSIC : LATITUDE=48.6787 : LONGITUDE=-9.20599 : TIME_ZONE=-15 : SITE_ELEVATION=380
+ AB=6 : AD=768 : AS=384 : AR=192 : AA=0.1
+ LR=6 : ST=0.15 : SJ=1 : LW=0.004 : DJ=0 : DS=0.2 : DR=2 : DP=512
+*--- comfort parameters -------------------
+ DIAM-SENSOR=0.07 : EPS-SENSOR=0.82 : REFL-SENSOR=0.47 : ELV_AIRSPEED1=0 : ELV_AIRSPEED2=0 : ELV_AIRSPEED3=0
+*--- other -------------------
+ FSCAL_TREGENZA=MEDIUM : SHM_MODE=0 : SURFGRID=0.2
+*--- daylight  -------------------
+ UDIMIN=100 : UDIMAX=2000 : DAMIN=300
+*
+*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+TYPES
+*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*
+*--------------------------------------------------------------------------------
+*  L a y e r s
+*--------------------------------------------------------------------------------
+LAYER SCREED
+ CONDUCTIVITY=   5.04 : CAPACITY=      1 : DENSITY=   2000 : PERT=      0 : PENRT=      0
+LAYER CONCRETE
+ CONDUCTIVITY=   7.56 : CAPACITY=      1 : DENSITY=   2200 : PERT=      0 : PENRT=      0
+LAYER INSULATION
+ CONDUCTIVITY=  0.126 : CAPACITY=   1.25 : DENSITY=     25 : PERT=      0 : PENRT=      0
+LAYER SUBSONIC
+ CONDUCTIVITY=  0.162 : CAPACITY=      1 : DENSITY=     60 : PERT=      0 : PENRT=      0
+LAYER GYPSUM
+ CONDUCTIVITY=   0.75 : CAPACITY=      1 : DENSITY=    900 : PERT=      0 : PENRT=      0
+*--------------------------------------------------------------------------------
+*  I n p u t s
+*--------------------------------------------------------------------------------
+INPUTS ACR_AHU_MV_A3 ABSHUM_SUP_MV_A3 Q_LIGHT_KJ_OFFICE_SW ACR_AHU_HV_A3 ACR_SV2_OFFICE_SW ACR_SV2_A3 TAIR_SET_HT_OFFICE_NE Q_COMP_KJ_OFFICE_NE MF_A3TOA2 MF_A2TOA3 MF_A2TOA1 MF_A1TOA2 HT_BUI_OFFICE_NE Q_ADDON_KJ_A3 Q_ADDON_KJ_A2 Q_ADDON_KJ_A1 Q_PERS_KJ_A2 ABSHUML_A2 ACR_INF_A3 ACR_SV1_A3 Q_PERS_KJ_OFFICE_SW ACR_SV1_OFFICE_NE Q_PERS_KJ_A1 Q_ADDON_KJ_OFFICE_SW Q_LIGHT_KJ_OFFICE_NE TSUP_MV_OFFICE_SW ;
+ Q_ADDON_KJ_OFFICE_NE ABSHUM_SUP_MV_OFFICE_SW ABSHUML_A3 Q_LIGHT_KJ_A1 ACR_INF_A2 ACR_AHU_MV_OFFICE_NE ACR_INF_OFFICE_NE TLAIR_A1 ACR_SV2_OFFICE_NE ACR_AHU_MV_OFFICE_SW ACR_INF_OFFICE_SW TAIR_SET_HT_A3 HT_BUI_A3 Q_COMP_KJ_OFFICE_SW ACR_INF_A1 ABSHUM_AMB ACR_AHU_HV_OFFICE_NE TAMB Q_PERS_KJ_OFFICE_NE ACR_SV1_OFFICE_SW ABSHUM_SUP_MV_OFFICE_NE TLAIR_A2 TAIR_SET_HT_OFFICE_SW ABSHUML_A1 ;
+ TSUP_MV_OFFICE_NE ACR_AHU_HV_OFFICE_SW TSUP_MV_A3 Q_PERS_KJ_A3 HT_BUI_OFFICE_SW TLAIR_A3
+INPUTS_DESCRIPTION
+ ACR_AHU_MV_A3 : any : Input
+ ABSHUM_SUP_MV_A3 : any : Input
+ Q_LIGHT_KJ_OFFICE_SW : any : Input
+ ACR_AHU_HV_A3 : any : Input
+ ACR_SV2_OFFICE_SW : any : Input
+ ACR_SV2_A3 : any : Input
+ TAIR_SET_HT_OFFICE_NE : any : Input
+ Q_COMP_KJ_OFFICE_NE : any : Input
+ MF_A3TOA2 : any : Input
+ MF_A2TOA3 : any : Input
+ MF_A2TOA1 : any : Input
+ MF_A1TOA2 : any : Input
+ HT_BUI_OFFICE_NE : any : Input
+ Q_ADDON_KJ_A3 : any : Input
+ Q_ADDON_KJ_A2 : any : Input
+ Q_ADDON_KJ_A1 : any : Input
+ Q_PERS_KJ_A2 : any : Input
+ ABSHUML_A2 : any : Input
+ ACR_INF_A3 : any : Input
+ ACR_SV1_A3 : any : Input
+ Q_PERS_KJ_OFFICE_SW : any : Input
+ ACR_SV1_OFFICE_NE : any : Input
+ Q_PERS_KJ_A1 : any : Input
+ Q_ADDON_KJ_OFFICE_SW : any : Input
+ Q_LIGHT_KJ_OFFICE_NE : any : Input
+ TSUP_MV_OFFICE_SW : any : Input
+ Q_ADDON_KJ_OFFICE_NE : any : Input
+ ABSHUM_SUP_MV_OFFICE_SW : any : Input
+ ABSHUML_A3 : any : Input
+ Q_LIGHT_KJ_A1 : any : Input
+ ACR_INF_A2 : any : Input
+ ACR_AHU_MV_OFFICE_NE : any : Input
+ ACR_INF_OFFICE_NE : any : Input
+ TLAIR_A1 : any : Input
+ ACR_SV2_OFFICE_NE : any : Input
+ ACR_AHU_MV_OFFICE_SW : any : Input
+ ACR_INF_OFFICE_SW : any : Input
+ TAIR_SET_HT_A3 : any : Input
+ HT_BUI_A3 : any : Input
+ Q_COMP_KJ_OFFICE_SW : any : Input
+ ACR_INF_A1 : any : Input
+ ABSHUM_AMB : any : Input
+ ACR_AHU_HV_OFFICE_NE : any : Input
+ TAMB : any : Input
+ Q_PERS_KJ_OFFICE_NE : any : Input
+ ACR_SV1_OFFICE_SW : any : Input
+ ABSHUM_SUP_MV_OFFICE_NE : any : Input
+ TLAIR_A2 : any : Input
+ TAIR_SET_HT_OFFICE_SW : any : Input
+ ABSHUML_A1 : any : Input
+ TSUP_MV_OFFICE_NE : any : Input
+ ACR_AHU_HV_OFFICE_SW : any : Input
+ TSUP_MV_A3 : any : Input
+ Q_PERS_KJ_A3 : any : Input
+ HT_BUI_OFFICE_SW : any : Input
+ TLAIR_A3 : any : Input
+*--------------------------------------------------------------------------------
+*  S c h e d u l e s
+*--------------------------------------------------------------------------------
+SCHEDULE HALL_WD
+ HOURS =0.000 1.000 2.000 3.000 4.000 5.000 6.000 7.000 8.000 9.000 10.000 11.000 12.000 13.000 14.000 15.000 16.000 17.000 18.000 19.000 20.000 21.000 22.000 23.000 24.0
+ VALUES=0 0 0 0 0 0 0 0 0.139 0.139 0.139 0.139 0.139 0.139 0.139 0.139 0.139 0.139 0 0 0 0 0 0 0 
+SCHEDULE HALL_EVENT
+ HOURS =0.000 1.000 2.000 3.000 4.000 5.000 6.000 7.000 8.000 9.000 10.000 11.000 12.000 13.000 14.000 15.000 16.000 17.000 18.000 19.000 20.000 21.000 22.000 23.000 24.0
+ VALUES=0 0 0 0 0 0 0 0 0.139 0.139 0.139 0.139 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 
+SCHEDULE OFFICE_WD
+ HOURS =0.000 1.000 2.000 3.000 4.000 5.000 6.000 7.000 8.000 9.000 10.000 11.000 12.000 13.000 14.000 15.000 16.000 17.000 18.000 19.000 20.000 21.000 22.000 23.000 24.0
+ VALUES=0 0 0 0 0 0 0 0 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 0 0 0 0 0 0 0 
+SCHEDULE HALLL_WD
+ HOURS =0.000 1.000 2.000 3.000 4.000 5.000 6.000 7.000 8.000 9.000 10.000 11.000 12.000 13.000 14.000 15.000 16.000 17.000 18.000 19.000 20.000 21.000 22.000 23.000 24.0
+ VALUES=0 0 0 0 0 0 0 0 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 0 0 0 0 0 0 0 
+SCHEDULE HALLL_EVENT
+ HOURS =0.000 1.000 2.000 3.000 4.000 5.000 6.000 7.000 8.000 9.000 10.000 11.000 12.000 13.000 14.000 15.000 16.000 17.000 18.000 19.000 20.000 21.000 22.000 23.000 24.0
+ VALUES=0 0 0 0 0 0 0 0 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 
+SCHEDULE OFFICEL_WD
+ HOURS =0.000 1.000 2.000 3.000 4.000 5.000 6.000 7.000 8.000 9.000 10.000 11.000 12.000 13.000 14.000 15.000 16.000 17.000 18.000 19.000 20.000 21.000 22.000 23.000 24.0
+ VALUES=0 0 0 0 0 0 0 0 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 0 0 0 0 0 0 0 
+SCHEDULE WE
+ HOURS =0.000 1.000 2.000 3.000 4.000 5.000 6.000 7.000 8.000 9.000 10.000 11.000 12.000 13.000 14.000 15.000 16.000 17.000 18.000 19.000 20.000 21.000 22.000 23.000 24.0
+ VALUES=0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+SCHEDULE WE
+ HOURS =0.000 1.000 2.000 3.000 4.000 5.000 6.000 7.000 8.000 9.000 10.000 11.000 12.000 13.000 14.000 15.000 16.000 17.000 18.000 19.000 20.000 21.000 22.000 23.000 24.0
+ VALUES=0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+SCHEDULE WE
+ HOURS =0.000 1.000 2.000 3.000 4.000 5.000 6.000 7.000 8.000 9.000 10.000 11.000 12.000 13.000 14.000 15.000 16.000 17.000 18.000 19.000 20.000 21.000 22.000 23.000 24.0
+ VALUES=0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+SCHEDULE WE
+ HOURS =0.000 1.000 2.000 3.000 4.000 5.000 6.000 7.000 8.000 9.000 10.000 11.000 12.000 13.000 14.000 15.000 16.000 17.000 18.000 19.000 20.000 21.000 22.000 23.000 24.0
+ VALUES=0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+SCHEDULE ALLDAY_DAY
+ HOURS =0.000 1.000 2.000 3.000 4.000 5.000 6.000 7.000 8.000 9.000 10.000 11.000 12.000 13.000 14.000 15.000 16.000 17.000 18.000 19.000 20.000 21.000 22.000 23.000 24.0
+ VALUES=1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 
+SCHEDULE HALL
+ DAYS=1 2 3 4 5 6 7
+ HOURLY=HALL_WD HALL_WD HALL_WD HALL_WD HALL_EVENT WE WE
+SCHEDULE OFFICE
+ DAYS=1 2 3 4 5 6 7
+ HOURLY=OFFICE_WD OFFICE_WD OFFICE_WD OFFICE_WD OFFICE_WD WE WE
+SCHEDULE HALL_LIGHT
+ DAYS=1 2 3 4 5 6 7
+ HOURLY=HALLL_WD HALLL_WD HALLL_WD HALLL_WD HALLL_EVENT WE WE
+SCHEDULE OFFICE_LIGHT
+ DAYS=1 2 3 4 5 6 7
+ HOURLY=OFFICEL_WD OFFICEL_WD OFFICEL_WD OFFICEL_WD OFFICEL_WD WE WE
+SCHEDULE ALLDAY
+ DAYS=1 2 3 4 5 6 7
+ HOURLY=ALLDAY_DAY ALLDAY_DAY ALLDAY_DAY ALLDAY_DAY ALLDAY_DAY ALLDAY_DAY ALLDAY_DAY
+*--------------------------------------------------------------------------------
+*  C O N S T R U C T I O N (Wall, Floor, Ceiling,..)
+*--------------------------------------------------------------------------------
+CONSTRUCTION FLOOR_HANGAR
+ LAYERS   = SCREED SUBSONIC CONCRETE 
+ THICKNESS= 0.1    0.05     0.3      
+ ABS-FRONT= 0.7   : ABS-BACK= 1    
+ EPS-FRONT= 0.9   : EPS-BACK= 0.9  
+ HFRONT   = 11 : HBACK= 9999
+CONSTRUCTION WALL_HANGAR
+ LAYERS   = GYPSUM INSULATION GYPSUM 
+ THICKNESS= 0.0125 0.16       0.0125 
+ ABS-FRONT= 0.3   : ABS-BACK= 0.7  
+ EPS-FRONT= 0.9   : EPS-BACK= 0.9  
+ HFRONT   = 11 : HBACK= 64
+CONSTRUCTION WALL_INT_HANGAR
+ LAYERS   = GYPSUM INSULATION GYPSUM 
+ THICKNESS= 0.0125 0.05       0.0125 
+ ABS-FRONT= 0.3   : ABS-BACK= 0.7  
+ EPS-FRONT= 0.9   : EPS-BACK= 0.9  
+ HFRONT   = 11 : HBACK= 64
+CONSTRUCTION ROOF_HANGAR
+ LAYERS   = GYPSUM INSULATION GYPSUM 
+ THICKNESS= 0.0125 0.16       0.0125 
+ ABS-FRONT= 0.3   : ABS-BACK= 0.7  
+ EPS-FRONT= 0.9   : EPS-BACK= 0.9  
+ HFRONT   = 11 : HBACK= 64
+*--------------------------------------------------------------------------------
+*  W i n d o w s
+*--------------------------------------------------------------------------------
+WINDOW WIN_W1_14401_N_142_90
+ WINID=14401 : HINSIDE=11 : HOUTSIDE=64 : SLOPE=90 : SPACID=4 : WWID=1.4 : WHEIG=1.8 : FFRAME=0.3 : UFRAME=7.25 : ABSFRAME=0.6 : RISHADE=0 : RESHADE=0 : REFLISHADE=0.5 : REFLOSHADE=0.5 : CCISHADE=0.5 : EPSFRAME=0.9 : EPSISHADE=0.9 : ITSHADECLOSE=648 : ITSHADEOPEN=540 : FLOWTOAIRNODE=1 : PERT=0 : PENRT=0 : RADMATERIAL=glass_70 : RADMATERIAL_SHD1=glass_20
+WINDOW WIN_W1_14401_S_322_90
+ WINID=14401 : HINSIDE=11 : HOUTSIDE=64 : SLOPE=90 : SPACID=4 : WWID=1.4 : WHEIG=1.8 : FFRAME=0.3 : UFRAME=7.25 : ABSFRAME=0.6 : RISHADE=0 : RESHADE=0 : REFLISHADE=0.5 : REFLOSHADE=0.5 : CCISHADE=0.5 : EPSFRAME=0.9 : EPSISHADE=0.9 : ITSHADECLOSE=648 : ITSHADEOPEN=540 : FLOWTOAIRNODE=1 : PERT=0 : PENRT=0 : RADMATERIAL=glass_70 : RADMATERIAL_SHD1=glass_20
+WINDOW WIN_W1_14401_E_232_89
+ WINID=14401 : HINSIDE=11 : HOUTSIDE=64 : SLOPE=89 : SPACID=4 : WWID=1.4 : WHEIG=1.8 : FFRAME=0.3 : UFRAME=7.25 : ABSFRAME=0.6 : RISHADE=0 : RESHADE=0 : REFLISHADE=0.5 : REFLOSHADE=0.5 : CCISHADE=0.5 : EPSFRAME=0.9 : EPSISHADE=0.9 : ITSHADECLOSE=648 : ITSHADEOPEN=540 : FLOWTOAIRNODE=1 : PERT=0 : PENRT=0 : RADMATERIAL=glass_70 : RADMATERIAL_SHD1=glass_20
+WINDOW WIN_W1_14401_W_52_89
+ WINID=14401 : HINSIDE=11 : HOUTSIDE=64 : SLOPE=89 : SPACID=4 : WWID=1.4 : WHEIG=1.8 : FFRAME=0.3 : UFRAME=7.25 : ABSFRAME=0.6 : RISHADE=0 : RESHADE=0 : REFLISHADE=0.5 : REFLOSHADE=0.5 : CCISHADE=0.5 : EPSFRAME=0.9 : EPSISHADE=0.9 : ITSHADECLOSE=648 : ITSHADEOPEN=540 : FLOWTOAIRNODE=1 : PERT=0 : PENRT=0 : RADMATERIAL=glass_70 : RADMATERIAL_SHD1=glass_20
+*--------------------------------------------------------------------------------
+*  G a i n s / L o s s e s
+*--------------------------------------------------------------------------------
+GAIN PEOPLE_A1
+ CONVECTIVE=INPUT 0*Q_PERS_KJ_A1 : RADIATIVE=INPUT 0*Q_PERS_KJ_A1 : HUMIDITY=0 : ELPOWERFRAC=0 :  AREA_RELATED : CATEGORY=PEOPLE
+GAIN LIGHT_A1
+ CONVECTIVE=INPUT 0.4*Q_LIGHT_KJ_A1 : RADIATIVE=INPUT 0.6*Q_LIGHT_KJ_A1 : HUMIDITY=0 : ELPOWERFRAC=1 :  AREA_RELATED : CATEGORY=LIGHTS
+GAIN MISC_A1
+ CONVECTIVE=INPUT 0.6*Q_ADDON_KJ_A1 : RADIATIVE=INPUT 0.4*Q_ADDON_KJ_A1 : HUMIDITY=0 : ELPOWERFRAC=1 :  AREA_RELATED : CATEGORY=MISCELLANEOUS
+GAIN THB_A1
+ CONVECTIVE=0.09 : RADIATIVE=0.09 : HUMIDITY=0 : ELPOWERFRAC=0 :  AREA_RELATED : CATEGORY=THBRIDGE
+GAIN PEOPLE_A2
+ CONVECTIVE=INPUT 0*Q_PERS_KJ_A2 : RADIATIVE=INPUT 0*Q_PERS_KJ_A2 : HUMIDITY=0 : ELPOWERFRAC=0 :  AREA_RELATED : CATEGORY=PEOPLE
+GAIN MISC_A2
+ CONVECTIVE=INPUT 0.6*Q_ADDON_KJ_A2 : RADIATIVE=INPUT 0.4*Q_ADDON_KJ_A2 : HUMIDITY=0 : ELPOWERFRAC=1 :  AREA_RELATED : CATEGORY=MISCELLANEOUS
+GAIN THB_A2
+ CONVECTIVE=0.09 : RADIATIVE=0.09 : HUMIDITY=0 : ELPOWERFRAC=0 :  AREA_RELATED : CATEGORY=THBRIDGE
+GAIN PEOPLE_A3
+ CONVECTIVE=INPUT 0.6667*Q_PERS_KJ_A3 : RADIATIVE=INPUT 0.3333*Q_PERS_KJ_A3 : HUMIDITY=0.0797 : ELPOWERFRAC=0 :  AREA_RELATED : CATEGORY=PEOPLE
+GAIN MISC_A3
+ CONVECTIVE=INPUT 0.6*Q_ADDON_KJ_A3 : RADIATIVE=INPUT 0.4*Q_ADDON_KJ_A3 : HUMIDITY=0 : ELPOWERFRAC=1 :  AREA_RELATED : CATEGORY=MISCELLANEOUS
+GAIN THB_A3
+ CONVECTIVE=0.09 : RADIATIVE=0.09 : HUMIDITY=0 : ELPOWERFRAC=0 :  AREA_RELATED : CATEGORY=THBRIDGE
+GAIN PEOPLE_OFFICE_NE
+ CONVECTIVE=INPUT 0.6667*Q_PERS_KJ_OFFICE_NE : RADIATIVE=INPUT 0.3333*Q_PERS_KJ_OFFICE_NE : HUMIDITY=0.0082 : ELPOWERFRAC=0 :  AREA_RELATED : CATEGORY=PEOPLE
+GAIN EQUIP_OFFICE_NE
+ CONVECTIVE=INPUT 0.6*Q_COMP_KJ_OFFICE_NE : RADIATIVE=INPUT 0.4*Q_COMP_KJ_OFFICE_NE : HUMIDITY=0 : ELPOWERFRAC=1 :  AREA_RELATED : CATEGORY=EQUIPMENT
+GAIN LIGHT_OFFICE_NE
+ CONVECTIVE=INPUT 0.4*Q_LIGHT_KJ_OFFICE_NE : RADIATIVE=INPUT 0.6*Q_LIGHT_KJ_OFFICE_NE : HUMIDITY=0 : ELPOWERFRAC=1 :  AREA_RELATED : CATEGORY=LIGHTS
+GAIN MISC_OFFICE_NE
+ CONVECTIVE=INPUT 0.6*Q_ADDON_KJ_OFFICE_NE : RADIATIVE=INPUT 0.4*Q_ADDON_KJ_OFFICE_NE : HUMIDITY=0 : ELPOWERFRAC=1 :  AREA_RELATED : CATEGORY=MISCELLANEOUS
+GAIN THB_OFFICE_NE
+ CONVECTIVE=0.09 : RADIATIVE=0.09 : HUMIDITY=0 : ELPOWERFRAC=0 :  AREA_RELATED : CATEGORY=THBRIDGE
+GAIN PEOPLE_OFFICE_SW
+ CONVECTIVE=INPUT 0.6667*Q_PERS_KJ_OFFICE_SW : RADIATIVE=INPUT 0.3333*Q_PERS_KJ_OFFICE_SW : HUMIDITY=0.0196 : ELPOWERFRAC=0 :  AREA_RELATED : CATEGORY=PEOPLE
+GAIN EQUIP_OFFICE_SW
+ CONVECTIVE=INPUT 0.6*Q_COMP_KJ_OFFICE_SW : RADIATIVE=INPUT 0.4*Q_COMP_KJ_OFFICE_SW : HUMIDITY=0 : ELPOWERFRAC=1 :  AREA_RELATED : CATEGORY=EQUIPMENT
+GAIN LIGHT_OFFICE_SW
+ CONVECTIVE=INPUT 0.4*Q_LIGHT_KJ_OFFICE_SW : RADIATIVE=INPUT 0.6*Q_LIGHT_KJ_OFFICE_SW : HUMIDITY=0 : ELPOWERFRAC=1 :  AREA_RELATED : CATEGORY=LIGHTS
+GAIN MISC_OFFICE_SW
+ CONVECTIVE=INPUT 0.6*Q_ADDON_KJ_OFFICE_SW : RADIATIVE=INPUT 0.4*Q_ADDON_KJ_OFFICE_SW : HUMIDITY=0 : ELPOWERFRAC=1 :  AREA_RELATED : CATEGORY=MISCELLANEOUS
+GAIN THB_OFFICE_SW
+ CONVECTIVE=0.09 : RADIATIVE=0.09 : HUMIDITY=0 : ELPOWERFRAC=0 :  AREA_RELATED : CATEGORY=THBRIDGE
+*--------------------------------------------------------------------------------
+*  C o m f o r t
+*--------------------------------------------------------------------------------
+*--------------------------------------------------------------------------------
+*  I n f i l t r a t i o n
+*--------------------------------------------------------------------------------
+INFILTRATION INF_A1
+ AIRCHANGE=INPUT 1*ACR_INF_A1
+INFILTRATION INF_A2
+ AIRCHANGE=INPUT 1*ACR_INF_A2
+INFILTRATION INF_A3
+ AIRCHANGE=INPUT 1*ACR_INF_A3
+INFILTRATION INF_OFFICE_NE
+ AIRCHANGE=INPUT 1*ACR_INF_OFFICE_NE
+INFILTRATION INF_OFFICE_SW
+ AIRCHANGE=INPUT 1*ACR_INF_OFFICE_SW
+*--------------------------------------------------------------------------------
+*  V e n t i l a t i o n
+*--------------------------------------------------------------------------------
+VENTILATION VENT_MV_A3
+ TEMPERATURE=INPUT 1*TSUP_MV_A3
+ AIRCHANGE=INPUT 1*ACR_AHU_MV_A3
+ SPECFANPOWER=1.8
+ SENSHR=0.75
+ ABSMINHUM=INPUT 1*ABSHUM_SUP_MV_A3
+ ABSMAXHUM=INPUT 1*ABSHUM_SUP_MV_A3
+ CALCQAHU=1
+VENTILATION VENT_HV_A3
+ TEMPERATURE=INPUT 1*TAMB
+ AIRCHANGE=INPUT 1*ACR_AHU_HV_A3
+ SPECFANPOWER=1.8
+ SENSHR=0
+ ABSMINHUM=INPUT 1*ABSHUM_AMB
+ ABSMAXHUM=INPUT 1*ABSHUM_AMB
+ CALCQAHU=0
+VENTILATION STVENT1_A3
+ TEMPERATURE=INPUT 1*TAMB
+ AIRCHANGE=INPUT 1*ACR_SV1_A3
+ SPECFANPOWER=0
+ SENSHR=0
+ ABSMINHUM=INPUT 1*ABSHUM_AMB
+ ABSMAXHUM=INPUT 1*ABSHUM_AMB
+ CALCQAHU=0
+VENTILATION STVENT2_A3
+ TEMPERATURE=INPUT 1*TAMB
+ AIRCHANGE=INPUT 1*ACR_SV2_A3
+ SPECFANPOWER=0
+ SENSHR=0
+ ABSMINHUM=INPUT 1*ABSHUM_AMB
+ ABSMAXHUM=INPUT 1*ABSHUM_AMB
+ CALCQAHU=0
+VENTILATION VENT_MV_OFFICE_NE
+ TEMPERATURE=INPUT 1*TSUP_MV_OFFICE_NE
+ AIRCHANGE=INPUT 1*ACR_AHU_MV_OFFICE_NE
+ SPECFANPOWER=1.8
+ SENSHR=0.75
+ ABSMINHUM=INPUT 1*ABSHUM_SUP_MV_OFFICE_NE
+ ABSMAXHUM=INPUT 1*ABSHUM_SUP_MV_OFFICE_NE
+ CALCQAHU=1
+VENTILATION VENT_HV_OFFICE_NE
+ TEMPERATURE=INPUT 1*TAMB
+ AIRCHANGE=INPUT 1*ACR_AHU_HV_OFFICE_NE
+ SPECFANPOWER=1.8
+ SENSHR=0
+ ABSMINHUM=INPUT 1*ABSHUM_AMB
+ ABSMAXHUM=INPUT 1*ABSHUM_AMB
+ CALCQAHU=0
+VENTILATION STVENT1_OFFICE_NE
+ TEMPERATURE=INPUT 1*TAMB
+ AIRCHANGE=INPUT 1*ACR_SV1_OFFICE_NE
+ SPECFANPOWER=0
+ SENSHR=0
+ ABSMINHUM=INPUT 1*ABSHUM_AMB
+ ABSMAXHUM=INPUT 1*ABSHUM_AMB
+ CALCQAHU=0
+VENTILATION STVENT2_OFFICE_NE
+ TEMPERATURE=INPUT 1*TAMB
+ AIRCHANGE=INPUT 1*ACR_SV2_OFFICE_NE
+ SPECFANPOWER=0
+ SENSHR=0
+ ABSMINHUM=INPUT 1*ABSHUM_AMB
+ ABSMAXHUM=INPUT 1*ABSHUM_AMB
+ CALCQAHU=0
+VENTILATION VENT_MV_OFFICE_SW
+ TEMPERATURE=INPUT 1*TSUP_MV_OFFICE_SW
+ AIRCHANGE=INPUT 1*ACR_AHU_MV_OFFICE_SW
+ SPECFANPOWER=1.8
+ SENSHR=0.75
+ ABSMINHUM=INPUT 1*ABSHUM_SUP_MV_OFFICE_SW
+ ABSMAXHUM=INPUT 1*ABSHUM_SUP_MV_OFFICE_SW
+ CALCQAHU=1
+VENTILATION VENT_HV_OFFICE_SW
+ TEMPERATURE=INPUT 1*TAMB
+ AIRCHANGE=INPUT 1*ACR_AHU_HV_OFFICE_SW
+ SPECFANPOWER=1.8
+ SENSHR=0
+ ABSMINHUM=INPUT 1*ABSHUM_AMB
+ ABSMAXHUM=INPUT 1*ABSHUM_AMB
+ CALCQAHU=0
+VENTILATION STVENT1_OFFICE_SW
+ TEMPERATURE=INPUT 1*TAMB
+ AIRCHANGE=INPUT 1*ACR_SV1_OFFICE_SW
+ SPECFANPOWER=0
+ SENSHR=0
+ ABSMINHUM=INPUT 1*ABSHUM_AMB
+ ABSMAXHUM=INPUT 1*ABSHUM_AMB
+ CALCQAHU=0
+VENTILATION STVENT2_OFFICE_SW
+ TEMPERATURE=INPUT 1*TAMB
+ AIRCHANGE=INPUT 1*ACR_SV2_OFFICE_SW
+ SPECFANPOWER=0
+ SENSHR=0
+ ABSMINHUM=INPUT 1*ABSHUM_AMB
+ ABSMAXHUM=INPUT 1*ABSHUM_AMB
+ CALCQAHU=0
+VENTILATION A3TOA2
+ TEMPERATURE=INPUT 1*TLAIR_A3
+ AIRFLOW=INPUT 1*MF_A3TOA2
+ SPECFANPOWER=0
+ SENSHR=0
+ ABSMINHUM=INPUT 1*ABSHUML_A3
+ ABSMAXHUM=INPUT 1*ABSHUML_A3
+ CALCQAHU=0
+VENTILATION A2TOA1
+ TEMPERATURE=INPUT 1*TLAIR_A2
+ AIRFLOW=INPUT 1*MF_A2TOA1
+ SPECFANPOWER=0
+ SENSHR=0
+ ABSMINHUM=INPUT 1*ABSHUML_A2
+ ABSMAXHUM=INPUT 1*ABSHUML_A2
+ CALCQAHU=0
+VENTILATION A1TOA2
+ TEMPERATURE=INPUT 1*TLAIR_A1
+ AIRFLOW=INPUT 1*MF_A1TOA2
+ SPECFANPOWER=0
+ SENSHR=0
+ ABSMINHUM=INPUT 1*ABSHUML_A1
+ ABSMAXHUM=INPUT 1*ABSHUML_A1
+ CALCQAHU=0
+VENTILATION A2TOA3
+ TEMPERATURE=INPUT 1*TLAIR_A2
+ AIRFLOW=INPUT 1*MF_A2TOA3
+ SPECFANPOWER=0
+ SENSHR=0
+ ABSMINHUM=INPUT 1*ABSHUML_A2
+ ABSMAXHUM=INPUT 1*ABSHUML_A2
+ CALCQAHU=0
+*--------------------------------------------------------------------------------
+*  C o o l i n g
+*--------------------------------------------------------------------------------
+*--------------------------------------------------------------------------------
+*  H e a t i n g
+*--------------------------------------------------------------------------------
+HEATING HEAT_A3
+ ON=INPUT 1*TAIR_SET_HT_A3
+ POWER=INPUT 1*HT_BUI_A3
+ HUMIDITY=0
+ RRAD=0
+ ELPOWERFRAC=0
+ AREA_RELATED_POWER=0
+HEATING HEAT_OFFICE_NE
+ ON=INPUT 1*TAIR_SET_HT_OFFICE_NE
+ POWER=INPUT 1*HT_BUI_OFFICE_NE
+ HUMIDITY=0
+ RRAD=0
+ ELPOWERFRAC=0
+ AREA_RELATED_POWER=0
+HEATING HEAT_OFFICE_SW
+ ON=INPUT 1*TAIR_SET_HT_OFFICE_SW
+ POWER=INPUT 1*HT_BUI_OFFICE_SW
+ HUMIDITY=0
+ RRAD=0
+ ELPOWERFRAC=0
+ AREA_RELATED_POWER=0
+*--------------------------------------------------------------------------------
+*  D a y l i g h t   C o n t r o l 
+*--------------------------------------------------------------------------------
+DCONTROL DLC_A1
+ ILLMODE=1 : VALUE=3 : ILLSETPOINT1=500 : ILLSETPOINT2=300 : CNTRLMODE=2 : MINPFAC=0.2 : MINLFAC=0.2 : GEOPOS1=2 : GEOPOS2=0 : GEOPOS3=0 : GEOPOS4=0
+DCONTROL DLC_A2
+ ILLMODE=1 : VALUE=3 : ILLSETPOINT1=500 : ILLSETPOINT2=300 : CNTRLMODE=2 : MINPFAC=0.2 : MINLFAC=0.2 : GEOPOS1=4 : GEOPOS2=0 : GEOPOS3=0 : GEOPOS4=0
+DCONTROL DLC_A3
+ ILLMODE=1 : VALUE=3 : ILLSETPOINT1=500 : ILLSETPOINT2=300 : CNTRLMODE=2 : MINPFAC=0.2 : MINLFAC=0.2 : GEOPOS1=8 : GEOPOS2=0 : GEOPOS3=0 : GEOPOS4=0
+DCONTROL DLC_OFFICE_NE
+ ILLMODE=1 : VALUE=3 : ILLSETPOINT1=500 : ILLSETPOINT2=300 : CNTRLMODE=2 : MINPFAC=0.2 : MINLFAC=0.2 : GEOPOS1=12 : GEOPOS2=0 : GEOPOS3=0 : GEOPOS4=0
+DCONTROL DLC_OFFICE_SW
+ ILLMODE=1 : VALUE=3 : ILLSETPOINT1=500 : ILLSETPOINT2=300 : CNTRLMODE=2 : MINPFAC=0.2 : MINLFAC=0.2 : GEOPOS1=16 : GEOPOS2=0 : GEOPOS3=0 : GEOPOS4=0
+*
+*--------------------------------------------------------------------------------
+*  Z o n e s
+*--------------------------------------------------------------------------------
+ZONES HANGAR
+*--------------------------------------------------------------------------------
+*  O r i e n t a t i o n s
+*--------------------------------------------------------------------------------
+HEMISPHERE NORTHERN
+ORIENTATIONS H_0_0 H_0_180 S_322_90 S_322_89 W_52_29 W_52_13 W_52_89 W_52_35 W_52_90 N_142_90 N_142_89 E_232_35 E_232_89 E_232_13 E_232_90 E_232_29
+INTERNAL_CALCULATION H_0_0 H_0_180 S_322_90 S_322_89 W_52_29 W_52_13 W_52_89 W_52_35 W_52_90 N_142_90 N_142_89 E_232_35 E_232_89 E_232_13 E_232_90 E_232_29
+*
+*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+BUILDING
+*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*
+*--------------------------------------------------------------------------------
+*  Z o n e  HANGAR  /  A i r n o d e  A1
+*--------------------------------------------------------------------------------
+ZONE HANGAR
+RADIATIONMODE
+ BEAM=DETAILED : DIFFUSE=DETAILED : LONGWAVE=DETAILED : GEOMODE=3D_DATA_CONCAVE : FSOLAIR=0.1
+DAYLIGHTMODE
+ DLSHADE =-1
+AIRNODE A1
+ROOF         =ROOF_HANGAR : SURF=  1 : AREA=    63.204 : EXTERNAL : ORI=E_232_29 : FSKY=0.84
+ROOF         =ROOF_HANGAR : SURF=  2 : AREA=   63.3055 : EXTERNAL : ORI=W_52_29 : FSKY=0.84
+ROOF         =ROOF_HANGAR : SURF=  3 : AREA=   373.704 : EXTERNAL : ORI=H_0_0 : FSKY=1
+WALL         =WALL_HANGAR : SURF=  5 : AREA=   21.8246 : EXTERNAL : ORI=S_322_89 : FSKY=0.51
+WALL         =WALL_HANGAR : SURF=  6 : AREA=   21.8246 : EXTERNAL : ORI=N_142_90 : FSKY=0.5
+ REGIME
+ GAIN        = PEOPLE_A1  : SCALE= SCHEDULE 1*HALL : GEOPOS= 0 : SCALE2= 1 : FRAC_REFAREA= 1
+ GAIN        = LIGHT_A1   : SCALE= SCHEDULE 1*HALL_LIGHT : GEOPOS= 0 : SCALE2= 1 : FRAC_REFAREA= 1 : DLIGHT_CTRL=DLC_A1
+ GAIN        = MISC_A1    : SCALE= SCHEDULE 1*ALLDAY : GEOPOS= 0 : SCALE2= 1 : FRAC_REFAREA= 1
+ GAIN        = THB_A1     : SCALE= 1 : GEOPOS= 0 : SCALE2= 1 : FRAC_REFAREA= 1
+ INFILTRATION= INF_A1
+ VENTILATION = A2TOA1
+ ADJACENT_AIRNODE= A3 : COUPL= 0
+ ADJACENT_AIRNODE= OFFICE_NE : COUPL= 0
+ ADJACENT_AIRNODE= OFFICE_SW : COUPL= 0
+ ADJACENT_AIRNODE= A2 : COUPL= 0
+ CAPACITANCE = 1618.25 : VOLUME= 539.416 : REFAREA= 483.875 : TINITIAL= 20      : PHINITIAL= 50      : WCAPR= 3
+*--------------------------------------------------------------------------------
+*  Z o n e  HANGAR  /  A i r n o d e  A2
+*--------------------------------------------------------------------------------
+AIRNODE A2
+ROOF         =ROOF_HANGAR : SURF= 35 : AREA=   50.7505 : EXTERNAL : ORI=E_232_35 : FSKY=0.81
+ROOF         =ROOF_HANGAR : SURF= 36 : AREA=   49.4346 : EXTERNAL : ORI=W_52_35 : FSKY=0.81
+ROOF         =ROOF_HANGAR : SURF= 37 : AREA=   75.4838 : EXTERNAL : ORI=W_52_29 : FSKY=0.84
+ROOF         =ROOF_HANGAR : SURF= 38 : AREA=   75.3626 : EXTERNAL : ORI=E_232_29 : FSKY=0.84
+WALL         =WALL_INT_HANGAR : SURF= 40 : AREA=   14.3898 : ADJACENT=OFFICE_NE : ADJ_SURF=10 : FRONT
+WALL         =WALL_INT_HANGAR : SURF= 41 : AREA=   15.1528 : ADJACENT=OFFICE_SW : ADJ_SURF=23 : FRONT
+WALL         =WALL_HANGAR : SURF= 42 : AREA=   1.96989 : EXTERNAL : ORI=N_142_90 : FSKY=0.5
+WALL         =WALL_HANGAR : SURF= 43 : AREA=   1.96989 : EXTERNAL : ORI=S_322_89 : FSKY=0.51
+WALL         =WALL_HANGAR : SURF= 44 : AREA=   1.94397 : EXTERNAL : ORI=N_142_89 : FSKY=0.51
+WALL         =WALL_HANGAR : SURF= 45 : AREA=   1.94397 : EXTERNAL : ORI=S_322_90 : FSKY=0.5
+WALL         =WALL_HANGAR : SURF= 46 : AREA=   6.69714 : EXTERNAL : ORI=N_142_89 : FSKY=0.51
+WALL         =WALL_HANGAR : SURF= 47 : AREA=   6.71134 : EXTERNAL : ORI=N_142_89 : FSKY=0.51
+WALL         =WALL_HANGAR : SURF= 48 : AREA=   6.71134 : EXTERNAL : ORI=S_322_90 : FSKY=0.5
+WALL         =WALL_HANGAR : SURF= 49 : AREA=   40.0766 : EXTERNAL : ORI=S_322_90 : FSKY=0.5
+WINDOW=WIN_W1_14401_S_322_90 : SURF= 53 : AREA=   7.99863 : EXTERNAL : ORI=S_322_90 : FSKY=0.5
+WINDOW=WIN_W1_14401_S_322_90 : SURF= 54 : AREA=   7.99863 : EXTERNAL : ORI=S_322_90 : FSKY=0.5
+WINDOW=WIN_W1_14401_S_322_90 : SURF= 55 : AREA=   7.99863 : EXTERNAL : ORI=S_322_90 : FSKY=0.5
+WALL         =WALL_HANGAR : SURF= 50 : AREA=   6.69714 : EXTERNAL : ORI=S_322_90 : FSKY=0.5
+WALL         =WALL_HANGAR : SURF= 51 : AREA=   5.87345 : EXTERNAL : ORI=N_142_89 : FSKY=0.51
+WINDOW=WIN_W1_14401_N_142_90 : SURF= 52 : AREA=    58.199 : EXTERNAL : ORI=N_142_89 : FSKY=0.5
+ REGIME
+ GAIN        = PEOPLE_A2  : SCALE= SCHEDULE 1*HALL : GEOPOS= 0 : SCALE2= 1 : FRAC_REFAREA= 1
+ GAIN        = MISC_A2    : SCALE= SCHEDULE 1*ALLDAY : GEOPOS= 0 : SCALE2= 1 : FRAC_REFAREA= 1
+ GAIN        = THB_A2     : SCALE= 1 : GEOPOS= 0 : SCALE2= 1 : FRAC_REFAREA= 1
+ INFILTRATION= INF_A2
+ VENTILATION = A3TOA2
+ VENTILATION = A1TOA2
+ ADJACENT_AIRNODE= A3 : COUPL= 0
+ ADJACENT_AIRNODE= A1 : COUPL= 0
+ ADJACENT_AIRNODE= OFFICE_NE : COUPL= 0
+ ADJACENT_AIRNODE= OFFICE_SW : COUPL= 0
+ CAPACITANCE = 6035.26 : VOLUME= 2011.75 : REFAREA= 696.866 : TINITIAL= 20      : PHINITIAL= 50      : WCAPR= 3
+*--------------------------------------------------------------------------------
+*  Z o n e  HANGAR  /  A i r n o d e  A3
+*--------------------------------------------------------------------------------
+AIRNODE A3
+FLOOR        =FLOOR_HANGAR : SURF= 57 : AREA=   696.866 : EXTERNAL : ORI=H_0_180 : FSKY=0
+WALL         =WALL_INT_HANGAR : SURF= 58 : AREA=   81.5627 : ADJACENT=OFFICE_NE : ADJ_SURF=9 : FRONT
+WALL         =WALL_INT_HANGAR : SURF= 59 : AREA=   81.5627 : ADJACENT=OFFICE_SW : ADJ_SURF=24 : FRONT
+WALL         =WALL_HANGAR : SURF= 60 : AREA=   5.52077 : EXTERNAL : ORI=N_142_90 : FSKY=0.5
+WALL         =WALL_HANGAR : SURF= 61 : AREA=   5.52077 : EXTERNAL : ORI=S_322_89 : FSKY=0.51
+WALL         =WALL_HANGAR : SURF= 62 : AREA=   5.37762 : EXTERNAL : ORI=N_142_89 : FSKY=0.51
+WALL         =WALL_HANGAR : SURF= 63 : AREA=   5.37762 : EXTERNAL : ORI=S_322_90 : FSKY=0.5
+WALL         =WALL_HANGAR : SURF= 64 : AREA=   8.76043 : EXTERNAL : ORI=N_142_89 : FSKY=0.51
+WALL         =WALL_HANGAR : SURF= 65 : AREA=     8.779 : EXTERNAL : ORI=N_142_89 : FSKY=0.51
+WALL         =WALL_HANGAR : SURF= 66 : AREA=     8.779 : EXTERNAL : ORI=S_322_90 : FSKY=0.5
+WALL         =WALL_HANGAR : SURF= 67 : AREA=   64.6055 : EXTERNAL : ORI=S_322_90 : FSKY=0.5
+WALL         =WALL_HANGAR : SURF= 68 : AREA=   8.76043 : EXTERNAL : ORI=S_322_90 : FSKY=0.5
+WALL         =WALL_HANGAR : SURF= 69 : AREA=   5.88053 : EXTERNAL : ORI=N_142_89 : FSKY=0.51
+WINDOW=WIN_W1_14401_N_142_90 : SURF= 70 : AREA=    58.725 : EXTERNAL : ORI=N_142_89 : FSKY=0.5
+ REGIME
+ GAIN        = PEOPLE_A3  : SCALE= SCHEDULE 1*HALL : GEOPOS= 0 : SCALE2= 1 : FRAC_REFAREA= 1
+ GAIN        = MISC_A3    : SCALE= SCHEDULE 1*ALLDAY : GEOPOS= 0 : SCALE2= 1 : FRAC_REFAREA= 1
+ GAIN        = THB_A3     : SCALE= 1 : GEOPOS= 0 : SCALE2= 1 : FRAC_REFAREA= 1
+ INFILTRATION= INF_A3
+ VENTILATION = VENT_MV_A3
+ VENTILATION = VENT_HV_A3
+ VENTILATION = STVENT1_A3
+ VENTILATION = STVENT2_A3
+ VENTILATION = A2TOA3
+ HEATING     = HEAT_A3
+ ADJACENT_AIRNODE= A1 : COUPL= 0
+ ADJACENT_AIRNODE= OFFICE_NE : COUPL= 0
+ ADJACENT_AIRNODE= OFFICE_SW : COUPL= 0
+ ADJACENT_AIRNODE= A2 : COUPL= 0
+ CAPACITANCE = 6898.97 : VOLUME= 2299.66 : REFAREA= 696.866 : TINITIAL= 20      : PHINITIAL= 50      : WCAPR= 3
+*--------------------------------------------------------------------------------
+*  Z o n e  HANGAR  /  A i r n o d e  OFFICE_NE
+*--------------------------------------------------------------------------------
+AIRNODE OFFICE_NE
+ROOF         =ROOF_HANGAR : SURF=  7 : AREA=   138.607 : EXTERNAL : ORI=E_232_13 : FSKY=0.93
+FLOOR        =FLOOR_HANGAR : SURF=  8 : AREA=   134.831 : EXTERNAL : ORI=H_0_180 : FSKY=0
+WALL         =WALL_INT_HANGAR : SURF=  9 : AREA=   81.5627 : ADJACENT=A3 : ADJ_SURF=58 : BACK
+WALL         =WALL_INT_HANGAR : SURF= 10 : AREA=   14.3898 : ADJACENT=A2 : ADJ_SURF=40 : BACK
+WALL         =WALL_HANGAR : SURF= 11 : AREA=    17.632 : EXTERNAL : ORI=N_142_90 : FSKY=0.5
+WALL         =WALL_HANGAR : SURF= 12 : AREA=    17.632 : EXTERNAL : ORI=S_322_89 : FSKY=0.51
+WALL         =WALL_HANGAR : SURF= 13 : AREA=   57.8153 : EXTERNAL : ORI=E_232_89 : FSKY=0.51
+WINDOW=WIN_W1_14401_E_232_89 : SURF= 14 : AREA=  0.857647 : EXTERNAL : ORI=E_232_89 : FSKY=0.51
+WINDOW=WIN_W1_14401_E_232_89 : SURF= 15 : AREA=  0.857647 : EXTERNAL : ORI=E_232_89 : FSKY=0.51
+WINDOW=WIN_W1_14401_E_232_89 : SURF= 16 : AREA=  0.857647 : EXTERNAL : ORI=E_232_89 : FSKY=0.51
+WINDOW=WIN_W1_14401_E_232_89 : SURF= 17 : AREA=  0.857647 : EXTERNAL : ORI=E_232_89 : FSKY=0.51
+WINDOW=WIN_W1_14401_E_232_89 : SURF= 18 : AREA=  0.857647 : EXTERNAL : ORI=E_232_89 : FSKY=0.51
+WINDOW=WIN_W1_14401_E_232_89 : SURF= 19 : AREA=  0.857647 : EXTERNAL : ORI=E_232_89 : FSKY=0.51
+WINDOW=WIN_W1_14401_E_232_89 : SURF= 20 : AREA=  0.857647 : EXTERNAL : ORI=E_232_89 : FSKY=0.51
+ REGIME
+ GAIN        = PEOPLE_OFFICE_NE : SCALE= SCHEDULE 1*OFFICE : GEOPOS= 0 : SCALE2= 1 : FRAC_REFAREA= 1
+ GAIN        = EQUIP_OFFICE_NE : SCALE= SCHEDULE 1*OFFICE_LIGHT : GEOPOS= 0 : SCALE2= 1 : FRAC_REFAREA= 1
+ GAIN        = LIGHT_OFFICE_NE : SCALE= SCHEDULE 1*OFFICE_LIGHT : GEOPOS= 0 : SCALE2= 1 : FRAC_REFAREA= 1 : DLIGHT_CTRL=DLC_OFFICE_NE
+ GAIN        = MISC_OFFICE_NE : SCALE= SCHEDULE 1*ALLDAY : GEOPOS= 0 : SCALE2= 1 : FRAC_REFAREA= 1
+ GAIN        = THB_OFFICE_NE : SCALE= 1 : GEOPOS= 0 : SCALE2= 1 : FRAC_REFAREA= 1
+ INFILTRATION= INF_OFFICE_NE
+ VENTILATION = VENT_MV_OFFICE_NE
+ VENTILATION = VENT_HV_OFFICE_NE
+ VENTILATION = STVENT1_OFFICE_NE
+ VENTILATION = STVENT2_OFFICE_NE
+ HEATING     = HEAT_OFFICE_NE
+ ADJACENT_AIRNODE= A3 : COUPL= 0
+ ADJACENT_AIRNODE= A1 : COUPL= 0
+ ADJACENT_AIRNODE= OFFICE_SW : COUPL= 0
+ ADJACENT_AIRNODE= A2 : COUPL= 0
+ CAPACITANCE = 1307.38 : VOLUME= 435.792 : REFAREA= 134.831 : TINITIAL= 20      : PHINITIAL= 50      : WCAPR= 3
+*--------------------------------------------------------------------------------
+*  Z o n e  HANGAR  /  A i r n o d e  OFFICE_SW
+*--------------------------------------------------------------------------------
+AIRNODE OFFICE_SW
+ROOF         =ROOF_HANGAR : SURF= 21 : AREA=   138.607 : EXTERNAL : ORI=W_52_13 : FSKY=0.93
+FLOOR        =FLOOR_HANGAR : SURF= 22 : AREA=   134.831 : EXTERNAL : ORI=H_0_180 : FSKY=0
+WALL         =WALL_INT_HANGAR : SURF= 23 : AREA=   15.1528 : ADJACENT=A2 : ADJ_SURF=41 : BACK
+WALL         =WALL_INT_HANGAR : SURF= 24 : AREA=   81.5627 : ADJACENT=A3 : ADJ_SURF=59 : BACK
+WALL         =WALL_HANGAR : SURF= 25 : AREA=    17.632 : EXTERNAL : ORI=N_142_89 : FSKY=0.51
+WALL         =WALL_HANGAR : SURF= 26 : AREA=   57.8153 : EXTERNAL : ORI=W_52_89 : FSKY=0.51
+WINDOW=WIN_W1_14401_W_52_89 : SURF= 28 : AREA=  0.857647 : EXTERNAL : ORI=W_52_89 : FSKY=0.51
+WINDOW=WIN_W1_14401_W_52_89 : SURF= 29 : AREA=  0.857647 : EXTERNAL : ORI=W_52_89 : FSKY=0.51
+WINDOW=WIN_W1_14401_W_52_89 : SURF= 30 : AREA=  0.857647 : EXTERNAL : ORI=W_52_89 : FSKY=0.51
+WINDOW=WIN_W1_14401_W_52_89 : SURF= 31 : AREA=  0.857647 : EXTERNAL : ORI=W_52_89 : FSKY=0.51
+WINDOW=WIN_W1_14401_W_52_89 : SURF= 32 : AREA=  0.857647 : EXTERNAL : ORI=W_52_89 : FSKY=0.51
+WINDOW=WIN_W1_14401_W_52_89 : SURF= 33 : AREA=  0.857647 : EXTERNAL : ORI=W_52_89 : FSKY=0.51
+WINDOW=WIN_W1_14401_W_52_89 : SURF= 34 : AREA=  0.857647 : EXTERNAL : ORI=W_52_89 : FSKY=0.51
+WALL         =WALL_HANGAR : SURF= 27 : AREA=    17.632 : EXTERNAL : ORI=S_322_90 : FSKY=0.5
+ REGIME
+ GAIN        = PEOPLE_OFFICE_SW : SCALE= SCHEDULE 1*OFFICE : GEOPOS= 0 : SCALE2= 1 : FRAC_REFAREA= 1
+ GAIN        = EQUIP_OFFICE_SW : SCALE= SCHEDULE 1*OFFICE_LIGHT : GEOPOS= 0 : SCALE2= 1 : FRAC_REFAREA= 1
+ GAIN        = LIGHT_OFFICE_SW : SCALE= SCHEDULE 1*OFFICE_LIGHT : GEOPOS= 0 : SCALE2= 1 : FRAC_REFAREA= 1 : DLIGHT_CTRL=DLC_OFFICE_SW
+ GAIN        = MISC_OFFICE_SW : SCALE= SCHEDULE 1*ALLDAY : GEOPOS= 0 : SCALE2= 1 : FRAC_REFAREA= 1
+ GAIN        = THB_OFFICE_SW : SCALE= 1 : GEOPOS= 0 : SCALE2= 1 : FRAC_REFAREA= 1
+ INFILTRATION= INF_OFFICE_SW
+ VENTILATION = VENT_MV_OFFICE_SW
+ VENTILATION = VENT_HV_OFFICE_SW
+ VENTILATION = STVENT1_OFFICE_SW
+ VENTILATION = STVENT2_OFFICE_SW
+ HEATING     = HEAT_OFFICE_SW
+ ADJACENT_AIRNODE= A3 : COUPL= 0
+ ADJACENT_AIRNODE= A1 : COUPL= 0
+ ADJACENT_AIRNODE= OFFICE_NE : COUPL= 0
+ ADJACENT_AIRNODE= A2 : COUPL= 0
+ CAPACITANCE = 1309.46 : VOLUME= 436.486 : REFAREA= 134.831 : TINITIAL= 20      : PHINITIAL= 50      : WCAPR= 3
+*--------------------------------------------------------------------------------
+*  O u t p u t s
+*--------------------------------------------------------------------------------
+OUTPUTS
+ TRANSFER : TIMEBASE=1.000
+ AIRNODES = OFFICE_SW OFFICE_NE A3 A2 A1 
+ NTYPES =   1 : TAIR - air temperature of airnode
+        =   2 : QSENS - sensible energy demand of airnode, heating(-), cooling(+)
+        =   3 : QCSURF - total convection to air from all surfaces within airnode (incl. internal shading)
+        =   4 : QINF - sensible infiltration energy gain of airnode
+        =   5 : QVENT - sensible ventilation energy gain of airnode
+        =   7 : QGCONV - internal convective gains of airnode
+        =   9 : RELHUM - relativ humidity of airnode air
+        =  29 : ABSHUM - absolute humidity of airnode air
+        =  10 : QLATD - latent energy demand of airnode, humidification(-), dehumidifcation (+)
+        =  12 : QSOLTR - total shortwave solar radiation transmitted through external windows of airnode (but not kept 100 % in airnode)
+        =  13 : QGRAD - defined internal radiative gain of airnode (Rad, gains are distributed over zones!)
+        =  25 : TOP - obsolete use new comfort outputs (Version 16: Operative temperature)
+        = 151 : QGLIGHT - Sensible energy gains from "lights" gains of airnode [kJ/hr]
+        = 152 : QGEQUIP - Sensible energy gains from  "equipment" gains of airnode [kJ/hr]
+        = 153 : QGMISC - Sensible energy gains from  "miscellaneous" gains of airnode [kJ/hr]
+        = 154 : QGPEOPLE - Sensible energy gains from "people" gains of airnode [kJ/hr]
+        = 155 : QELLIGHT - Electric energy demand of "lights" gains of airnode [kJ/hr]
+        = 156 : QELEQUIP - Electric energy demand of "equipment" gains of airnode [kJ/hr]
+        = 157 : QELMISC - Electric energy demand of "miscellaneous" gains of airnode [kJ/hr]
+        = 159 : QELHEAT - Electric energy demand of heating of airnode [kJ/hr]
+        = 160 : QELCOOL - Electric energy demand of cooling of airnode [kJ/hr]
+        = 161 : QELVENT - Electric energy demand of ventilation of airnode [kJ/hr]
+        = 164 : QGTHB - Sensible energy gain from "thermal bridge" gains/losses of airnode [kJ/hr]
+        = 405 : AREADLC1 - Floor area related to 1st daylight controlled gain [m²]
+        = 406 : ILLUMDLC1 - Daylight illuminance of 1st daylight controlled gain [lux]
+        = 407 : ILLSETDLC1 - Illuminance set point of 1st daylight controlled gain [lux]
+        = 408 : MODEDLC1 - Lighting control type of 1st daylight controlled gain (1...always on, 2...on/off, 3...continuous, 4...continuous on/off)
+        = 409 : FDIMDLC1 - dimming fraction of 1st daylight controlled gain [-]
+        = 410 : CDADLC1 - Continuous daylight autonomy  of 1st daylight controlled gain [-]
+        = 411 : DADLC1 - Daylight autonomy of 1st daylight controlled gain [-]
+        = 412 : UDIDLC1 - Useful daylight illuminance of 1st daylight controlled gain [-]
+        = 400 : ILLUM_H - Global horizontal illuminance outside the building (without shading effects) [lux]
+        = 170 : QAHU_H - total heating energy to condition supply air to set point conditions (sum of defined ventilations with supply air conditioning) [kJ/h]
+        = 171 : QAHU_C - total cooling energy to condition supply air to set point conditions (sum of defined ventilations with supply air conditioning) [kJ/h]
+        = 172 : QAHU_SENS_H - heating energy to condition supply air to reach set point temperature after HX, Dehum (sum of defined ventilations with supply air conditioning) [kJ/h]
+        = 173 : QAHU_SENS_C - cooling energy to condition supply air to reach set point temperature after HX (sum of defined ventilations with supply air conditioning) [kJ/h]
+        = 174 : QAHU_HRSENS_H - heating energy provided by heat recovery unit (sum of defined ventilations with supply air conditioning) [kJ/h]
+        = 175 : QAHU_HRSENS_C - cooling energy provided by heat recovery unit (sum of defined ventilations with supply air conditioning) [kJ/h]
+        = 176 : QAHU_HUM_H - heating energy for humidification process (sum of defined ventilations with supply air conditioning) [kJ/h]
+        = 177 : QAHU_DEHUM_C - cooling energy for dehumidification process (sum of defined ventilations with supply air conditioning) [kJ/h]
+        = 178 : QAHU_REHAT_H - heating energy to condition supply air to reach set point temperature after dehumdification process (sum of defined ventilations with supply air conditioning) [kJ/h]
+        = 180 : TAIR_WB - wet bulb temperature of airnode [C]
+        = 181 : TAIR_DP - dew point temperature of airnode [C]
+        = 185 : TAHU_HR - dry bulb temperature after heat recovery of 1st ventilation with supply air conditioning [C]
+        = 188 : RHAHU_HR - rel. humidity of air after heat recovery of 1st ventilation with supply air conditioning [%]
+        = 189 : WAHU_HR - Humidity ratio of air after heat recovery of 1st ventilation with supply air conditioning [kg/kg]
+        = 117 : QSOLAIR - Solar radiation entering all windows of airnode which is immediately transformed in a convective heat flow rate for the internal air     [kJ/hr]
+        =   6 : QCOUP - sensible coupling energy gain of airnode
+ AIRNODES = OFFICE_SW 
+ NTYPES =  28 : SCHEDULE = OFFICE_LIGHT, HALL_LIGHT, HALL, OFFICE, ALLDAY,  : - - values of all schedules
+ AIRNODES = A2 
+ NTYPES = 119 : SURF = 53, 54, 55, 52,  : SHADCNTRL - shading control signal ( 0 or 1 ) of radiation depending control (0 or 1, 0 if not used)
+        = 103 : SURF = 53, 54, 55, 52,  : IBSHAD - Total direct radiation on outside of external surface incl. shading effects
+        = 104 : SURF = 53, 54, 55, 52,  : IDSHAD - Total diffuse radiation on outside of external surface incl. shading effects
+        = 113 : SURF = 53, 54, 55, 52,  : AREA - surface area
+ AIRNODES = A3 
+ NTYPES = 119 : SURF = 70,  : SHADCNTRL - shading control signal ( 0 or 1 ) of radiation depending control (0 or 1, 0 if not used)
+        = 103 : SURF = 70,  : IBSHAD - Total direct radiation on outside of external surface incl. shading effects
+        = 104 : SURF = 70,  : IDSHAD - Total diffuse radiation on outside of external surface incl. shading effects
+        = 113 : SURF = 70,  : AREA - surface area
+ AIRNODES = OFFICE_NE 
+ NTYPES = 119 : SURF = 14, 15, 16, 17, 18, 19, 20,  : SHADCNTRL - shading control signal ( 0 or 1 ) of radiation depending control (0 or 1, 0 if not used)
+        = 103 : SURF = 14, 15, 16, 17, 18, 19, 20,  : IBSHAD - Total direct radiation on outside of external surface incl. shading effects
+        = 104 : SURF = 14, 15, 16, 17, 18, 19, 20,  : IDSHAD - Total diffuse radiation on outside of external surface incl. shading effects
+        = 113 : SURF = 14, 15, 16, 17, 18, 19, 20,  : AREA - surface area
+ AIRNODES = OFFICE_SW 
+ NTYPES = 119 : SURF = 28, 29, 30, 31, 32, 33, 34,  : SHADCNTRL - shading control signal ( 0 or 1 ) of radiation depending control (0 or 1, 0 if not used)
+        = 103 : SURF = 28, 29, 30, 31, 32, 33, 34,  : IBSHAD - Total direct radiation on outside of external surface incl. shading effects
+        = 104 : SURF = 28, 29, 30, 31, 32, 33, 34,  : IDSHAD - Total diffuse radiation on outside of external surface incl. shading effects
+        = 113 : SURF = 28, 29, 30, 31, 32, 33, 34,  : AREA - surface area
+ AIRNODES = A1 
+ NTYPES = 114 : SURF = 1, 2, 3, 5, 6,  : IB - Incident direct radiation on outside of external surfaces (no shading effects)    [kJ/hr]
+        = 115 : SURF = 1, 2, 3, 5, 6,  : ID - Incident diffuse radiation on outside of external surfaces (no shading effects)   [kJ/hr]
+        = 116 : SURF = 1, 2, 3, 5, 6,  : IT - Incident total radiation on outside of external surfaces (no shading effects)     [kJ/hr]
+        = 113 : SURF = 1, 2, 3, 5, 6,  : AREA - surface area
+ AIRNODES = A2 
+ NTYPES = 114 : SURF = 35, 36, 44, 45,  : IB - Incident direct radiation on outside of external surfaces (no shading effects)    [kJ/hr]
+        = 115 : SURF = 35, 36, 44, 45,  : ID - Incident diffuse radiation on outside of external surfaces (no shading effects)   [kJ/hr]
+        = 116 : SURF = 35, 36, 44, 45,  : IT - Incident total radiation on outside of external surfaces (no shading effects)     [kJ/hr]
+        = 113 : SURF = 35, 36, 44, 45,  : AREA - surface area
+ AIRNODES = A3 
+ NTYPES = 114 : SURF = 57,  : IB - Incident direct radiation on outside of external surfaces (no shading effects)    [kJ/hr]
+        = 115 : SURF = 57,  : ID - Incident diffuse radiation on outside of external surfaces (no shading effects)   [kJ/hr]
+        = 116 : SURF = 57,  : IT - Incident total radiation on outside of external surfaces (no shading effects)     [kJ/hr]
+        = 113 : SURF = 57,  : AREA - surface area
+ AIRNODES = OFFICE_NE 
+ NTYPES = 114 : SURF = 7, 13,  : IB - Incident direct radiation on outside of external surfaces (no shading effects)    [kJ/hr]
+        = 115 : SURF = 7, 13,  : ID - Incident diffuse radiation on outside of external surfaces (no shading effects)   [kJ/hr]
+        = 116 : SURF = 7, 13,  : IT - Incident total radiation on outside of external surfaces (no shading effects)     [kJ/hr]
+        = 113 : SURF = 7, 13,  : AREA - surface area
+ AIRNODES = OFFICE_SW 
+ NTYPES = 114 : SURF = 21, 26,  : IB - Incident direct radiation on outside of external surfaces (no shading effects)    [kJ/hr]
+        = 115 : SURF = 21, 26,  : ID - Incident diffuse radiation on outside of external surfaces (no shading effects)   [kJ/hr]
+        = 116 : SURF = 21, 26,  : IT - Incident total radiation on outside of external surfaces (no shading effects)     [kJ/hr]
+        = 113 : SURF = 21, 26,  : AREA - surface area
+ AIRNODES = A1 
+ NTYPES =  19 : SURF = 5, 6, 1, 2, 3,  : QCOMI - energy from  inside surface incl. conv. to the air and l-wave radiation to other surfaces
+        =  79 : SURF = 5, 6, 1, 2, 3,  : QSIAB - solar (direkt+diffuse) radiation being absorbed at inside surface
+        =  21 : SURF = 5, 6, 1, 2, 3,  : QABSI - total radiation absorbed (and transmitted) at all inside surf. of airnode (inc. solar gains, radiative heat and int. rad. gains, but not l-wave radiation from other walls
+ AIRNODES = A2 
+ NTYPES =  19 : SURF = 53, 54, 55, 52, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 35, 36, 37, 38,  : QCOMI - energy from  inside surface incl. conv. to the air and l-wave radiation to other surfaces
+        =  79 : SURF = 53, 54, 55, 52, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 35, 36, 37, 38,  : QSIAB - solar (direkt+diffuse) radiation being absorbed at inside surface
+        =  21 : SURF = 53, 54, 55, 52, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 35, 36, 37, 38,  : QABSI - total radiation absorbed (and transmitted) at all inside surf. of airnode (inc. solar gains, radiative heat and int. rad. gains, but not l-wave radiation from other walls
+ AIRNODES = A3 
+ NTYPES =  19 : SURF = 70, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 57,  : QCOMI - energy from  inside surface incl. conv. to the air and l-wave radiation to other surfaces
+        =  79 : SURF = 70, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 57,  : QSIAB - solar (direkt+diffuse) radiation being absorbed at inside surface
+        =  21 : SURF = 70, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 57,  : QABSI - total radiation absorbed (and transmitted) at all inside surf. of airnode (inc. solar gains, radiative heat and int. rad. gains, but not l-wave radiation from other walls
+ AIRNODES = OFFICE_NE 
+ NTYPES =  19 : SURF = 14, 15, 16, 17, 18, 19, 20, 9, 10, 11, 12, 13, 8, 7,  : QCOMI - energy from  inside surface incl. conv. to the air and l-wave radiation to other surfaces
+        =  79 : SURF = 14, 15, 16, 17, 18, 19, 20, 9, 10, 11, 12, 13, 8, 7,  : QSIAB - solar (direkt+diffuse) radiation being absorbed at inside surface
+        =  21 : SURF = 14, 15, 16, 17, 18, 19, 20, 9, 10, 11, 12, 13, 8, 7,  : QABSI - total radiation absorbed (and transmitted) at all inside surf. of airnode (inc. solar gains, radiative heat and int. rad. gains, but not l-wave radiation from other walls
+ AIRNODES = OFFICE_SW 
+ NTYPES =  19 : SURF = 28, 29, 30, 31, 32, 33, 34, 23, 24, 25, 26, 27, 22, 21,  : QCOMI - energy from  inside surface incl. conv. to the air and l-wave radiation to other surfaces
+        =  79 : SURF = 28, 29, 30, 31, 32, 33, 34, 23, 24, 25, 26, 27, 22, 21,  : QSIAB - solar (direkt+diffuse) radiation being absorbed at inside surface
+        =  21 : SURF = 28, 29, 30, 31, 32, 33, 34, 23, 24, 25, 26, 27, 22, 21,  : QABSI - total radiation absorbed (and transmitted) at all inside surf. of airnode (inc. solar gains, radiative heat and int. rad. gains, but not l-wave radiation from other walls
+ AIRNODES = A1 
+ NTYPES =  17 : SURF = 1, 2, 3, 5, 6,  : TSI - inside surface temperature
+ AIRNODES = A2 
+ NTYPES =  17 : SURF = 35, 36, 37, 38, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55,  : TSI - inside surface temperature
+ AIRNODES = A3 
+ NTYPES =  17 : SURF = 57, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 58, 59,  : TSI - inside surface temperature
+ AIRNODES = OFFICE_NE 
+ NTYPES =  17 : SURF = 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,  : TSI - inside surface temperature
+ AIRNODES = OFFICE_SW 
+ NTYPES =  17 : SURF = 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34,  : TSI - inside surface temperature
+*
+*--------------------------------------------------------------------------------
+*--------------------------------------------------------------------------------
+*--------------------------------------------------------------------------------
+*  T R N S F L O W Multizone Airflow Network (Model COMIS 3.1)
+*--------------------------------------------------------------------------------
+*--------------------------------------------------------------------------------
+*--------------------------------------------------------------------------------
+*
+*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+MULTIZONE_AIRFLOW_NETWORK
+*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*
+CALCFLOWS=0
+*--------------------------------------------------------------------------------
+*  A d d  T R N S F L O W  C o m m a n d s
+*--------------------------------------------------------------------------------
+*
+*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+POLLUTANTS
+*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*
+*
+*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+LINKTYPES
+*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*
+*--------------------------------------------------------------------------------
+*  C r a c k s
+*--------------------------------------------------------------------------------
+*--------------------------------------------------------------------------------
+*  F a n s
+*--------------------------------------------------------------------------------
+*--------------------------------------------------------------------------------
+*  S t r a i g h t   D u c t s
+*--------------------------------------------------------------------------------
+*--------------------------------------------------------------------------------
+*  F l o w   C o n t r o l l e r s
+*--------------------------------------------------------------------------------
+*--------------------------------------------------------------------------------
+*  L a r g e    V e r t i c a l   Openings (Windows+Doors)
+*--------------------------------------------------------------------------------
+*--------------------------------------------------------------------------------
+*  T e s t   D a t a   C o m p o n e n t s
+*--------------------------------------------------------------------------------
+*
+*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+NODETYPES
+*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*
+*--------------------------------------------------------------------------------
+*  E x t e r n a l   N o d e s  (CP VALUES)
+*--------------------------------------------------------------------------------
+*--------------------------------------------------------------------------------
+*  A u x i l i a r y   N o d e s
+*--------------------------------------------------------------------------------
+*--------------------------------------------------------------------------------
+*  T h e r m a l  Z o n e   N o d e s
+*--------------------------------------------------------------------------------
+*--------------------------------------------------------------------------------
+*  W i n d   v e  l o c i t y   p r o f i l e
+*--------------------------------------------------------------------------------
+*
+*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+WIND_VELOPROF
+*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*
+*--------------------------------------------------------------------------------
+*  A i r l i n k   N e t w o r k
+*--------------------------------------------------------------------------------
+*
+*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+AIRLINK_NETWORK
+*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*
+*--------------------------------------------------------------------------------
+*  E n d
+*--------------------------------------------------------------------------------
+END
+
+_EXTENSION_WINPOOL_START_
+BERKELEY LAB WINDOW v7.4.6.0  DOE-2 Data File : Multi Band Calculation : generated with Trnsys18.std
+Unit System : SI
+Name        : DOE-2 WINDOW LIB
+Desc        : GT_SANCO_COMBI_Neut_70/35_#2_AR90
+Window ID   : 14401
+Tilt        : 90.0
+Glazings    : 2
+Frame       :  3 Wood                  2.270
+Spacer      :  2 Class2                0.068   1.550  -0.143
+Total Height: 1500.0 mm
+Total Width : 1200.0 mm
+Glass Height: 1360.3 mm
+Glass Width : 1060.3 mm
+Mullion     : None
+Gap        Thick    Cond  dCond    Vis   dVis   Dens   dDens     Pr     dPr
+1 Ar90/Air1 16.0 0.01712  5.410  2.062  6.300  1.711 -0.0060  0.687 -0.0001
+2              0       0      0      0      0      0       0      0       0
+3              0       0      0      0      0      0       0      0       0
+4              0       0      0      0      0      0       0      0       0
+5              0       0      0      0      0      0       0      0       0
+Angle     0    10    20    30    40    50    60    70    80    90 Hemis
+Tsol  0.348 0.350 0.345 0.339 0.330 0.313 0.275 0.201 0.095 0.000 0.291
+Abs1  0.307 0.310 0.317 0.321 0.321 0.322 0.330 0.332 0.267 0.001 0.316
+Abs2  0.011 0.012 0.012 0.012 0.012 0.012 0.012 0.011 0.008 0.000 0.012
+Abs3      0     0     0     0     0     0     0     0     0     0     0
+Abs4      0     0     0     0     0     0     0     0     0     0     0
+Abs5      0     0     0     0     0     0     0     0     0     0     0
+Abs6      0     0     0     0     0     0     0     0     0     0     0
+Rfsol 0.333 0.328 0.326 0.328 0.337 0.353 0.383 0.456 0.629 0.999 0.371
+Rbsol 0.399 0.395 0.393 0.393 0.398 0.411 0.443 0.523 0.688 1.000 0.433
+Tvis  0.578 0.581 0.573 0.563 0.548 0.520 0.456 0.333 0.157 0.000 0.483
+Rfvis 0.198 0.191 0.189 0.192 0.202 0.223 0.263 0.354 0.564 0.999 0.248
+Rbvis 0.208 0.202 0.201 0.204 0.216 0.241 0.296 0.421 0.661 1.000 0.275
+SHGC  0.370   N/A   N/A   N/A   N/A   N/A   N/A   N/A   N/A   N/A   N/A
+Tvis_daylight:  0.700
+Layer ID#        44425    44007        0        0        0        0
+Tir              0.000    0.000        0        0        0        0
+Emis F           0.837    0.837        0        0        0        0
+Emis B           0.012    0.837        0        0        0        0
+Thickness(mm)      6.0      4.0        0        0        0        0
+Cond(W/m2-K     ) 166.7    250.0        0        0        0        0
+Spectral File 44425_GT_COM 44007_GT_EUR         None         None         None         None
+Overall and Center of Glass Ig U-values (W/m2-K)
+Outdoor Temperature                 -17.8 C      15.6 C      26.7 C      37.8 C
+Solar      WdSpd  hcout hrout  hin
+(W/m2)     (m/s)     (W/m2-K)
+0        0.00   0.00  0.00  0.00  1.30 1.30  0.99 0.99  1.01 1.01  1.02 1.02
+0        6.71   0.00  0.00  0.00  1.30 1.30  0.99 0.99  1.01 1.01  1.02 1.02
+783        0.00   0.00  0.00  0.00  1.30 1.30  0.99 0.99  1.01 1.01  1.02 1.02
+783        6.71   0.00  0.00  0.00  1.30 1.30  0.99 0.99  1.01 1.01  1.02 1.02
+*** END OF LIBRARY ***
+************************************************************************************************************
+*WinID   Description                              Design         U-Value g-value T-sol Rf-sol T-vis-daylight
+************************************************************************************************************
+ 14401   GT_SANCO_COMBI_Neut_70/35_#2_AR90        6/16/4           1.01  0.37  0.348  0.333  0.7
+_EXTENSION_WINPOOL_END_
+
+_EXTENSION_BuildingGeometry_START_
+vertex 1 27.347500860862 21.024614273032 7.830769393768
+vertex 2 29.112557071920 22.381580169749 6.572772671745
+vertex 3 14.048334882926 41.976176469994 6.572772671750
+vertex 4 12.283278671868 40.619210573277 7.830769393768
+vertex 5 0.296315742911 31.403696756824 7.830769393768
+vertex 6 -1.472481462701 30.043854803225 6.572772671747
+vertex 7 13.591740726293 10.449258502980 6.572772671749
+vertex 8 15.360537931905 11.809100456565 7.830769393768
+vertex 9 14.048334882933 41.976176469994 6.572772671747
+vertex 10 13.591740726293 10.449258502995 6.572772671750
+vertex 11 29.112557071923 22.381580169749 6.572772671742
+vertex 12 -1.472481462704 30.043854803240 6.572772671744
+vertex 13 31.217160581801 23.999588237235 5.072772671744
+vertex 14 32.543469142766 25.019247256861 3.882206094193
+vertex 15 17.479246978910 44.613843576434 3.882206071630
+vertex 16 16.152938392807 43.594184537480 5.072772671744
+vertex 17 -3.581545629550 28.422417406240 5.072772671747
+vertex 18 -4.873462536868 27.429198508373 3.913077909839
+vertex 19 10.190759627051 7.834602188849 3.913077887332
+vertex 20 11.482676559444 8.827821105995 5.072772671747
+vertex 21 -3.581545629542 28.422417406240 5.072772671747
+vertex 22 16.152938392817 43.594184537447 5.072772671747
+vertex 23 31.217160581797 23.999588237231 5.072772671747
+vertex 24 32.543469167892 25.019247276222 3.300000000000
+vertex 25 10.190759652128 7.834602208126 3.300000000000
+vertex 26 -4.873462536885 27.429198508348 3.300000000000
+vertex 27 17.479246978890 44.613843576429 3.300000000000
+vertex 28 17.479246978912 44.613843576438 3.300000000000
+vertex 29 17.479246978912 44.613843576438 3.882206071630
+vertex 30 32.543469167892 25.019247276222 3.882206071630
+vertex 31 32.543469167892 25.019247276222 3.300000000000
+vertex 32 -4.873462536866 27.429198508371 3.913077909839
+vertex 33 -4.873462536866 27.429198508371 3.300000000000
+vertex 34 10.190759652128 7.834602208126 3.913077909839
+vertex 35 16.152938392803 43.594184537486 3.300000000000
+vertex 36 16.152938392801 43.594184537489 5.072772671744
+vertex 37 17.479246978908 44.613843576444 3.882206071626
+vertex 38 17.479246978908 44.613843576443 3.300000000000
+vertex 39 32.543469142761 25.019247256868 3.300000000000
+vertex 40 32.543469142760 25.019247256869 3.882206094193
+vertex 41 31.217160581790 23.999588237239 5.072772671747
+vertex 42 31.217160581793 23.999588237237 3.300000000000
+vertex 43 -3.581545629539 28.422417406236 5.072772671750
+vertex 44 -3.581545629541 28.422417406239 3.300000000000
+vertex 45 -4.873462536862 27.429198508366 3.300000000000
+vertex 46 -4.873462536861 27.429198508365 3.913077909838
+vertex 47 10.190759627054 7.834602188839 3.913077887328
+vertex 48 10.190759627054 7.834602188840 3.300000000000
+vertex 49 11.482676559448 8.827821105990 3.300000000000
+vertex 50 11.482676559451 8.827821105987 5.072772671747
+vertex 51 16.152938392817 43.594184537447 3.300000000000
+vertex 52 14.048334882938 41.976176469972 3.300000000000
+vertex 53 14.048334882940 41.976176469965 6.572772671745
+vertex 54 -1.472481462686 30.043854803196 6.572772671749
+vertex 55 -1.472481462683 30.043854803211 3.300000000000
+vertex 56 -3.581545629535 28.422417406211 3.300000000000
+vertex 57 -3.581545629535 28.422417406211 5.072772671747
+vertex 58 11.482676559444 8.827821105995 3.300000000000
+vertex 59 13.591740726290 10.449258502987 3.300000000000
+vertex 60 29.112557071914 22.381580169757 3.300000000000
+vertex 61 18.509636095892 14.230110499877 3.531634610683
+vertex 62 18.509636095896 14.230110499877 6.104212894782
+vertex 63 16.044699443013 12.335080214398 6.104212894775
+vertex 64 16.044699443006 12.335080214398 3.531634610676
+vertex 65 21.234476463880 16.324953389398 6.104212894775
+vertex 66 18.769539810983 14.429923103890 6.104212894775
+vertex 67 18.769539810975 14.429923103904 3.531634610676
+vertex 68 21.234476463880 16.324953389412 3.531634610676
+vertex 69 26.663339351504 20.498634516553 6.104212894775
+vertex 70 24.198402698599 18.603604231059 6.104212894775
+vertex 71 24.198402698599 18.603604231073 3.531634610676
+vertex 72 26.663339351497 20.498634516553 3.531634610676
+vertex 73 29.112557071914 22.381580169757 3.300000000000
+vertex 74 31.217160581797 23.999588237231 3.300000000000
+vertex 75 14.048334882938 41.976176469972 3.300000000000
+vertex 76 13.945272049815 41.896942307963 6.442772671745
+vertex 77 13.945272049817 41.896942307965 3.430000000000
+vertex 78 -1.369418629553 30.123088965206 3.430000000000
+vertex 79 -1.369418629561 30.123088965200 6.442772671749
+vertex 80 17.479246980474 44.613843577597 0.000000000000
+vertex 81 32.543469169454 25.019247277382 0.000000000000
+vertex 82 10.190759627050 7.834602188845 0.000000000000
+vertex 83 -4.873462561944 27.429198489090 0.000000000000
+vertex 84 32.543469167892 25.019247276222 -0.000000000003
+vertex 85 17.479246978912 44.613843576438 -0.000000000003
+vertex 86 10.190759652128 7.834602208126 0.000000000003
+vertex 87 -4.873462536866 27.429198508371 0.000000000003
+vertex 88 16.152938392807 43.594184537480 -0.000000000003
+vertex 89 31.217160581797 23.999588237231 0.000000000000
+vertex 90 32.543469142765 25.019247256863 0.000000000000
+vertex 91 -3.581545629545 28.422417406244 0.000000000003
+vertex 92 11.482676559444 8.827821105995 0.000000000000
+vertex 93 10.190759627050 7.834602188845 0.000000000000
+vertex 94 14.048334882937 41.976176469980 0.000000000000
+vertex 95 16.152938392817 43.594184537447 0.000000000000
+vertex 96 -1.472481462679 30.043854803225 0.000000000000
+vertex 97 -3.581545629535 28.422417406211 0.000000000000
+vertex 98 11.482676559444 8.827821105995 0.000000000000
+vertex 99 13.591740726286 10.449258502995 0.000000000000
+vertex 100 29.112557071909 22.381580169764 0.000000000000
+vertex 101 -1.369418629557 30.123088965213 3.170000000000
+vertex 102 13.945272049814 41.896942307969 3.170000000000
+vertex 103 13.945272049816 41.896942307971 0.130000000000
+vertex 104 -1.369418629548 30.123088965220 0.130000000000
+vertex 105 36.868303447714 28.344157038280 2.582090737468
+vertex 106 21.804081258734 47.938753338495 2.582090745710
+vertex 107 21.804081259776 47.938753339262 -0.000000000003
+vertex 108 36.868303448763 28.344157039003 -0.000000000003
+vertex 109 23.761631173313 45.392495070267 1.721855300764
+vertex 110 22.931900452942 46.471756800453 1.721855300764
+vertex 111 22.931900452692 46.471756800261 2.351855300765
+vertex 112 23.761631173063 45.392495070075 2.351855300765
+vertex 113 25.728400288303 42.834245043112 1.721855300764
+vertex 114 24.898669567920 43.913506773313 1.721855300764
+vertex 115 24.898669567670 43.913506773121 2.351855300765
+vertex 116 25.728400288052 42.834245042920 2.351855300765
+vertex 117 27.695169403301 40.275995015947 1.721855300764
+vertex 118 26.865438682907 41.355256746162 1.721855300764
+vertex 119 26.865438682657 41.355256745970 2.351855300765
+vertex 120 27.695169403050 40.275995015754 2.351855300765
+vertex 121 29.661938518274 37.717744988814 1.721855300764
+vertex 122 28.832207797888 38.797006719018 1.721855300764
+vertex 123 28.832207797638 38.797006718826 2.351855300765
+vertex 124 29.661938518023 37.717744988621 2.351855300765
+vertex 125 31.705534551822 35.059563319968 1.721855300764
+vertex 126 30.875803831442 36.138825050165 1.721855300764
+vertex 127 30.875803831192 36.138825049972 2.351855300765
+vertex 128 31.705534551572 35.059563319775 2.351855300765
+vertex 129 33.902784422471 32.201518367760 1.721855300764
+vertex 130 33.073053702074 33.280780097980 1.721855300764
+vertex 131 33.073053701824 33.280780097787 2.351855300765
+vertex 132 33.902784422220 32.201518367568 2.351855300765
+vertex 133 36.100034293133 29.343473415535 1.721855300764
+vertex 134 35.270303572737 30.422735145754 1.721855300764
+vertex 135 35.270303572487 30.422735145562 2.351855300765
+vertex 136 36.100034292883 29.343473415343 2.351855300765
+vertex 137 -9.198296840190 24.104288728163 2.582090737468
+vertex 138 5.865925348790 4.509692427947 2.582090745710
+vertex 139 10.190759628612 7.834602190005 3.882206071630
+vertex 140 -4.873462560368 27.429198490221 3.882206071630
+vertex 141 5.865925347748 4.509692427180 -0.000000000003
+vertex 142 -9.198296841239 24.104288727440 -0.000000000003
+vertex 143 -4.873462561930 27.429198489061 0.000000000000
+vertex 144 3.908375434211 7.055950696175 1.721855300764
+vertex 145 4.738106154582 5.976688965989 1.721855300764
+vertex 146 4.738106154832 5.976688966181 2.351855300765
+vertex 147 3.908375434461 7.055950696368 2.351855300765
+vertex 148 1.941606319221 9.614200723330 1.721855300764
+vertex 149 2.771337039603 8.534938993129 1.721855300764
+vertex 150 2.771337039854 8.534938993322 2.351855300765
+vertex 151 1.941606319471 9.614200723522 2.351855300765
+vertex 152 -0.025162795777 12.172450750496 1.721855300764
+vertex 153 0.804567924617 11.093189020280 1.721855300764
+vertex 154 0.804567924867 11.093189020473 2.351855300765
+vertex 155 -0.025162795527 12.172450750688 2.351855300765
+vertex 156 -1.991931910750 14.730700777629 1.721855300764
+vertex 157 -1.162201190365 13.651439047424 1.721855300764
+vertex 158 -1.162201190114 13.651439047617 2.351855300765
+vertex 159 -1.991931910500 14.730700777821 2.351855300765
+vertex 160 -4.035527944298 17.388882446475 1.721855300764
+vertex 161 -3.205797223919 16.309620716278 1.721855300764
+vertex 162 -3.205797223668 16.309620716470 2.351855300765
+vertex 163 -4.035527944048 17.388882446667 2.351855300765
+vertex 164 -6.232777814947 20.246927398682 1.721855300764
+vertex 165 -5.403047094550 19.167665668463 1.721855300764
+vertex 166 -5.403047094300 19.167665668655 2.351855300765
+vertex 167 -6.232777814697 20.246927398875 2.351855300765
+vertex 168 -8.430027685610 23.104972350907 1.721855300764
+vertex 169 -7.600296965213 22.025710620689 1.721855300764
+vertex 170 -7.600296964963 22.025710620881 2.351855300765
+vertex 171 -8.430027685359 23.104972351100 2.351855300765
+
+
+zone HANGAR
+roof 1 1 2 3 4
+roof 2 5 6 7 8
+roof 3 8 1 4 5
+wall 5 8 10 11 1
+wall 6 4 9 12 5
+roof 35 13 14 15 16
+roof 36 17 18 19 20
+roof 37 20 7 6 21
+roof 38 22 3 2 23
+wall 40 28 29 30 31
+wall 41 32 33 25 34
+wall 42 35 36 37 38
+wall 43 39 40 41 42
+wall 44 43 44 45 46
+wall 45 47 48 49 50
+wall 46 51 52 53 22
+wall 47 54 55 56 57
+wall 48 20 58 59 7
+wall 49 2 7 59 60
+window 53 61 62 63 64
+window 54 65 66 67 68
+window 55 69 70 71 72
+wall 50 23 2 73 74
+wall 51 75 55 54 53
+window 52 76 77 78 79
+floor 57 80 81 82 83
+wall 58 84 85 28 31
+wall 59 86 25 33 87
+wall 60 85 88 35 38
+wall 61 39 42 89 90
+wall 62 87 45 44 91
+wall 63 92 49 48 93
+wall 64 94 52 51 95
+wall 65 56 55 96 97
+wall 66 98 99 59 58
+wall 67 99 100 60 59
+wall 68 89 74 73 100
+wall 69 55 75 94 96
+window 70 101 102 103 104
+roof 7 105 106 29 30
+floor 8 107 108 81 80
+wall 9 31 28 85 84
+wall 10 31 30 29 28
+wall 11 80 29 106 107
+wall 12 81 108 105 30
+wall 13 105 108 107 106
+window 14 109 110 111 112
+window 15 113 114 115 116
+window 16 117 118 119 120
+window 17 121 122 123 124
+window 18 125 126 127 128
+window 19 129 130 131 132
+window 20 133 134 135 136
+roof 21 137 138 139 140
+floor 22 141 142 143 93
+wall 23 34 25 33 32
+wall 24 87 33 25 86
+wall 25 143 142 137 140
+wall 26 137 142 141 138
+window 28 144 145 146 147
+window 29 148 149 150 151
+window 30 152 153 154 155
+window 31 156 157 158 159
+window 32 160 161 162 163
+window 33 164 165 166 167
+window 34 168 169 170 171
+wall 27 93 139 138 141
+_EXTENSION_BuildingGeometry_END_
+
+
+_EXTENSION_VirtualSurfaceGeometry_START_
+
+airnode A1
+floor 20001  6 9 2 10
+
+airnode A2
+floor 20002  24 25 26 27
+ceiling 20003  10 2 9 6
+
+airnode A3
+ceiling 20004  27 26 25 24
+
+airnode OFFICE_NE
+
+airnode OFFICE_SW
+
+_EXTENSION_VirtualSurfaceGeometry_END_
+
+
+_EXTENSION_ExternalShadingGeometry_START_
+
+_EXTENSION_ExternalShadingGeometry_END_
+
+
+_EXTENSION_GeoPositionGeometry_START_
+_EXTENSION_GeoPositionGeometry_END_
+
+
+_EXTENSION_DaylightSensorPoints_START_
+zone HANGAR
+dgeopos 1 10.054000000000 31.111400000000 7.422800000000
+dgeopos 2 17.586100000000 21.314100000000 7.422800000000
+dgeopos 3 12.012900000000 17.029400000000 4.150000000000
+dgeopos 4 4.480800000000 26.826700000000 4.150000000000
+dgeopos 5 23.189200000000 25.621700000000 4.150000000000
+dgeopos 6 15.657100000000 35.419000000000 4.150000000000
+dgeopos 7 4.480800000000 26.826700000000 0.850000000000
+dgeopos 8 15.657100000000 35.419000000000 0.850000000000
+dgeopos 9 12.012900000000 17.029400000000 0.850000000000
+dgeopos 10 23.189200000000 25.621700000000 0.850000000000
+dgeopos 11 21.524700000000 43.827000000000 0.850000000000
+dgeopos 12 25.290700000000 38.928300000000 0.850000000000
+dgeopos 13 29.056800000000 34.029700000000 0.850000000000
+dgeopos 14 32.822900000000 29.131000000000 0.850000000000
+dgeopos 15 6.145300000000 8.621500000000 0.850000000000
+dgeopos 16 2.379300000000 13.520100000000 0.850000000000
+dgeopos 17 -1.386800000000 18.418800000000 0.850000000000
+dgeopos 18 -5.152900000000 23.317400000000 0.850000000000
+_EXTENSION_DaylightSensorPoints_END_
+
+
+_EXTENSION_AdditionalDaylightGeometry_START_
+
+
+_EXTENSION_AdditionalDaylightGeometry_END_
+
+
+_EXTENSION_VAMPARAMS_START_
+_EXTENSION_VAMPARAMS_END_
+
+
+
