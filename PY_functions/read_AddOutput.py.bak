@@ -4,15 +4,14 @@ Returning {ID:temperature}
 """
 import os
 import re
-import Rhino as rc
-import Grasshopper as gh
 
-ModelPath = ModelPath #"c:\\Users\\vhoang\\Desktop\\LizardSurfTemp\\TRNLizard_Files\\Model\\" #this will be an input from GH component in the future
-Variant = Variant #"BASIS2" #this will be an input from GH component in the future
+#ModelPath = "c:\\Users\\vhoang\\Desktop\\LizardSurfTemp\\TRNLizard_Files\\Model\\" #this will be an input from GH component in the future
+ModelPath = "C:\\Users\\Vu Hoang\\Desktop\\LizardSurfTemp\\TRNLizard_Files\\Model\\"
+Variant = "BASIS2" #this will be an input from GH component in the future
 AddOutputPath = os.path.join(ModelPath,Variant,"Results\\AddOutput_1h.prn")
 b18path = os.path.join(ModelPath,Variant,"%s.b18"%Variant)
 
-TimeStep = int(TimeStep) #1
+TimeStep = 1
 
 def readSurfaceTemp(AddOutputPath,TimeStep):
     """Read in AddOutput_1h.prn
@@ -50,7 +49,6 @@ def readSurfaceTemp(AddOutputPath,TimeStep):
         #now get all the temperature at timestep
         SrfTempAtTimeStep = []
         for key in sorted(SurfaceTemperature.keys()):
-            #print key
             SrfTempAtTimeStep.append(SurfaceTemperature[key][TimeStep-1]) #sorted smaller id to higher id
         return SurfaceTemperature, SrfTempAtTimeStep
 
@@ -76,7 +74,7 @@ def getDataParagraph(startpattern,stoppattern,datararray):
 
 def readSurfaceGeo(b18path):
     """Read b18 building file
-    Return surface and vertices, as well as construction"""
+    Return surface and vertices"""
     if not os.path.isfile(b18path):
         print("b18 building file not found! Please check!")
         pass
@@ -93,47 +91,17 @@ def readSurfaceGeo(b18path):
             if "vertex" in dline:
                 vertexdict[int(dline[1])] = [float(xyz) for xyz in dline[2:]] #{vertexID:[x,y,z]}
             if "wall" in dline or "window" in dline or "floor" in dline or "ceiling" in dline or "roof" in dline:
-                srfbasicinfo[int(dline[1])] = [[int(nrID) for nrID in dline[2:]],dline[0]] #{surfaceID:[[vertexID],construction]}
-                #print srfbasicinfo[int(dline[1])]
+                srfbasicinfo[int(dline[1])] = [int(nrID) for nrID in dline[2:]] #{surfaceID:[vertexID]}
         for key in srfbasicinfo.keys():
             srfInfo[key] = []
-            for vertices in srfbasicinfo[key][0]:
+            for vertices in srfbasicinfo[key]:
                 srfInfo[key].append(vertexdict[vertices])
         b18file.close()
         return srfInfo,vertexdict,srfbasicinfo
         #actually only need srfInfo
         #just getting everything out for now, incase will need to use those
 
-def verticesToSurface(verticesList):
-    """Mark Sen Dong
-    Turning list of vertices with coordinate into brep"""
-    ptslst = list()
-    #print verticesList
-    for ptsxyz in verticesList:
-        pts = rc.Geometry.Point3d(ptsxyz[0],ptsxyz[1],ptsxyz[2])
-        ptslst.append(pts)
-    ptslst.append(ptslst[0])
-    #print ptslst
-    polyline = rc.Geometry.Polyline(ptslst)
-    #return polyline
-    return rc.Geometry.Brep.CreatePlanarBreps(polyline.ToNurbsCurve())
-
-def listToTree(nestedList):
-    """Anders Holder Deleuran
-    Convert list to datatree"""
-    dt = gh.DataTree[object]()
-    for i,l in enumerate(nestedList):
-        dt.AddRange(l,gh.Kernel.Data.GH_Path(i))
-    return dt
-
 SrfTempAll, SrfTempTimeStep = readSurfaceTemp(AddOutputPath, TimeStep)
 srfInfo, vertexdict, srfbasicinfo = readSurfaceGeo(b18path)
-
-#get breps 
-Surfaces = list()
-for key in sorted(srfInfo.keys()):
-    brep = verticesToSurface(srfInfo[key])
-    Surfaces.append(brep)
-newSurf = listToTree(Surfaces)
-
-
+print(srfInfo)
+print(srfbasicinfo)

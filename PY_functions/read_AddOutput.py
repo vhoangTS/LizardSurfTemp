@@ -74,7 +74,7 @@ def getDataParagraph(startpattern,stoppattern,datararray):
 
 def readSurfaceGeo(b18path):
     """Read b18 building file
-    Return surface and vertices"""
+    Return surface and vertices, as well as construction"""
     if not os.path.isfile(b18path):
         print("b18 building file not found! Please check!")
         pass
@@ -91,10 +91,11 @@ def readSurfaceGeo(b18path):
             if "vertex" in dline:
                 vertexdict[int(dline[1])] = [float(xyz) for xyz in dline[2:]] #{vertexID:[x,y,z]}
             if "wall" in dline or "window" in dline or "floor" in dline or "ceiling" in dline or "roof" in dline:
-                srfbasicinfo[int(dline[1])] = [int(nrID) for nrID in dline[2:]] #{surfaceID:[vertexID]}
+                srfbasicinfo[int(dline[1])] = [[int(nrID) for nrID in dline[2:]],dline[0]] #{surfaceID:[[vertexID],construction]}
+                #print srfbasicinfo[int(dline[1])]
         for key in srfbasicinfo.keys():
             srfInfo[key] = []
-            for vertices in srfbasicinfo[key]:
+            for vertices in srfbasicinfo[key][0]:
                 srfInfo[key].append(vertexdict[vertices])
         b18file.close()
         return srfInfo,vertexdict,srfbasicinfo
